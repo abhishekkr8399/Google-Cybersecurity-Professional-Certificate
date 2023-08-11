@@ -1,0 +1,483 @@
+Python functions in cybersecurity
+Previously, you explored how to define and call your own functions. In this reading, you’ll revisit what you learned about functions and examine how functions can improve efficiency in a cybersecurity setting.
+
+Functions in cybersecurity
+A function is a section of code that can be reused in a program. Functions are important in Python because they allow you to automate repetitive parts of your code. In cybersecurity, you will likely adopt some processes that you will often repeat.
+
+When working with security logs, you will often encounter tasks that need to be repeated. For example, if you were responsible for finding malicious login activity based on failed login attempts, you might have to repeat the process for multiple logs.
+
+To work around that, you could define a function that takes a log as its input and returns all potentially malicious logins. It would be easy to apply this function to different logs.
+
+Defining a function
+In Python, you'll work with built-in functions and user-defined functions. Built-in functions are functions that exist within Python and can be called directly. The print() function is an example of a built-in function.
+
+User-defined functions are functions that programmers design for their specific needs. To define a function, you need to include a function header and the body of your function.
+
+Function header
+The function header is what tells Python that you are starting to define a function. For example, if you want to define a function that displays an "investigate activity" message, you can include this function header:
+
+def display_investigation_message():
+
+The def keyword is placed before a function name to define a function. In this case, the name of that function is display_investigation_message. 
+
+The parentheses that follow the name of the function and the colon (:) at the end of the function header are also essential parts of the syntax.
+
+Pro tip: When naming a function, give it a name that indicates what it does. This will make it easier to remember when calling it later.
+
+Function body
+The body of the function is an indented block of code after the function header that defines what the function does. The indentation is very important when writing a function because it separates the definition of a function from the rest of the code.
+
+To add a body to your definition of the display_investigation_message() function, add an indented line with the print() function. Your function definition becomes the following:
+
+def display_investigation_message():
+
+    print("investigate activity")
+
+Calling a function
+After defining a function, you can use it as many times as needed in your code. Using a function after defining it is referred to as calling a function. To call a function, write its name followed by parentheses. So, for the function you previously defined, you can use the following code to call it:
+
+display_investigation_message()
+
+Although you'll use functions in more complex ways as you expand your understanding, the following code provides an introduction to how the display_investigation_message() function might be part of a larger section of code. You can run it and analyze its output:
+
+12345678910
+def display_investigation_message():
+    print("investigate activity")
+application_status = "potential concern"
+email_status = "okay"
+if application_status == "potential concern":
+    print("application_log:")
+    display_investigation_message()
+if email_status == "potential concern":
+    print("email log:")
+    display_investigation_message()
+Reset
+application_log:
+investigate activity
+The display_investigation_message() function is used twice within the code. It will print "investigate activity" messages about two different logs when the specified conditions evaluate to True. In this example, only the first conditional statement evaluates to True, so the message prints once.
+
+This code calls the function from within conditionals, but you might call a function from a variety of locations within the code.
+
+Note: Calling a function inside of the body of its function definition can create an infinite loop. This happens when it is not combined with logic that stops the function call when certain conditions are met. For example, in the following function definition, after you first call func1(), it will continue to call itself and create an infinite loop: 
+
+def func1():
+
+    func1()
+
+
+
+
+
+Functions and variables
+Previously, you focused on working with multiple parameters and arguments in functions and returning information from functions. In this reading, you’ll review these concepts. You'll also be introduced to a new concept: global and local variables.
+
+Working with variables in functions
+Working with variables in functions requires an understanding of both parameters and arguments. The terms parameters and arguments have distinct uses when referring to variables in a function. Additionally, if you want the function to return output, you should be familiar with return statements.
+
+Parameters
+A parameter is an object that is included in a function definition for use in that function. When you define a function, you create variables in the function header. They can then be used in the body of the function. In this context, these variables are called parameters.  For example, consider the following function:
+
+def remaining_login_attempts(maximum_attempts, total_attempts):
+
+    print(maximum_attempts - total_attempts)
+
+This function takes in two variables, maximum_attempts and total_attempts and uses them to perform a calculation. In this example, maximum_attempts and total_attempts are parameters.
+
+Arguments
+In Python, an argument is the data brought into a function when it is called. When calling remaining_login_attempts in the following example, the integers 3 and 2 are considered arguments:
+
+remaining_login_attempts(3, 2)
+
+These integers pass into the function through the parameters that were identified when defining the function. In this case, those parameters would be maximum_attempts and total_attempts. 3 is in the first position, so it passes into maximum_attempts. Similarly, 2 is in the second position and passes into total_attempts.
+
+Return statements
+When defining functions in Python, you use return statements if you want the function to return output. The return keyword is used to return information from a function.
+
+The return keyword appears in front of the information that you want to return. In the following example, it is before the calculation of how many login attempts remain:
+
+def remaining_login_attempts(maximum_attempts, total_attempts):
+
+    return maximum_attempts - total_attempts
+
+Note: The return keyword is not a function, so you should not place parentheses after it.
+
+Return statements are useful when you want to store what a function returns inside of a variable to use elsewhere in the code. For example, you might use this variable for calculations or within conditional statements. In the following example, the information returned from the call to remaining_login_attempts is stored in a variable called remaining_attempts. Then, this variable is used in a conditional that prints a "Your account is locked" message when remaining_attempts is less than or equal to 0. You can run this code to explore its output:
+
+12345
+def remaining_login_attempts(maximum_attempts, total_attempts):
+    return maximum_attempts - total_attempts
+remaining_attempts = remaining_login_attempts(3, 3)
+if remaining_attempts <= 0:
+    print("Your account is locked")
+Reset
+Your account is locked
+In this example, the message prints because the calculation in the function results in 0.
+
+Note: When Python encounters a return statement, it executes this statement and then exits the function. If there are lines of code that follow the return statement within the function, they will not be run. The previous example didn't contain any lines of code after the return statement, but this might apply in other functions, such as one containing a conditional statement.
+
+Global and local variables
+To better understand how functions interact with variables, you should know the difference between global and local variables. 
+
+When defining and calling functions, you're working with local variables, which are different from the variables you define outside the scope of a function.
+
+Global variables
+A global variable is a variable that is available through the entire program. Global variables are assigned outside of a function definition. Whenever that variable is called, whether inside or outside a function, it will return the value it is assigned.
+
+For example, you might assign the following variable at the beginning of your code:
+
+device_id = "7ad2130bd"
+
+Throughout the rest of your code, you will be able to access and modify the device_id variable in conditionals, loops, functions, and other syntax.
+
+Local variables
+A local variable is a variable assigned within a function. These variables cannot be called or accessed outside of the body of a function. Local variables include parameters as well as other variables assigned within a function definition.
+
+In the following function definition, total_string and name are local variables:
+
+def greet_employee(name):
+
+    total_string = "Welcome" + name
+
+    return total_string
+
+The variable total_string is a local variable because it's assigned inside of the function. The parameter name is a local variable because it is also created when the function is defined. 
+
+Whenever you call a function, Python creates these variables temporarily while the function is running and deletes them from memory after the function stops running.
+
+This means that if you call the greet_employee() function with an argument and then use the total_string variable outside of this function, you'll get an error.
+
+Best practices for global and local variables
+When working with variables and functions, it is very important to make sure that you only use a certain variable name once, even if one is defined globally and the other is defined locally. 
+
+When using global variables inside functions, functions can access the values of a global variable. You can run the following example to explore this:
+
+1234
+username = "elarson"
+def identify_user():
+    print(username)
+identify_user()
+Reset
+elarson
+The code block returns "elarson" even though that name isn't defined locally. The function accesses the global variable. If you wanted the identify_user() function to accommodate other usernames, you would have to reassign the global username variable outside of the function. This isn't good practice. A better way to pass different values into a function is to use a parameter instead of a global variable.
+
+There's something else to consider too. If you reuse the name of a global variable within a function, it will create a new local variable with that name. In other words, there will be both a global variable with that name and a local variable with that name, and they'll have different values. You can consider the following code block:
+
+1234567
+username = "elarson"
+print("1:" + username)
+def greet():
+    username = "bmoreno"
+    print("2:" + username)
+greet()
+print("3:" + username)
+Reset
+1:elarson
+2:bmoreno
+3:elarson
+The first print statement occurs before the function, and Python returns the value of the global username variable, "elarson". The second print statement is within the function, and it returns the value of the local username variable, which is "bmoreno". But this doesn't change the value of the global variable, and when username is printed a third time after the function call, it's still "elarson".
+
+Due to this complexity, it's best to avoid combining global and local variables within functions. 
+
+
+
+
+
+Work with built-in functions
+Previously, you explored built-in functions in Python, including print(), type(), max(), and sorted(). Built-in functions are functions that exist within Python and can be called directly. In this reading, you’ll explore these further and also learn about the min() function. In addition, you'll review how to pass the output of one function into another function.
+
+print() 
+The print() function outputs a specified object to the screen. The print() function is one of the most commonly used functions in Python because it allows you to output any detail from your code.
+
+To use the print() function, you pass the object you want to print as an argument to the function. The print() function takes in any number of arguments, separated by a comma, and prints all of them. For example, you can run the following code that prints a string, a variable, another string, and an integer together:
+
+12
+month = "September"
+print("Investigate failed login attempts during", month, "if more than", 100)
+Reset
+Investigate failed login attempts during September if more than 100
+type() 
+The type() function returns the data type of its argument. The type() function helps you keep track of the data types of variables to avoid errors throughout your code. 
+
+To use it, you pass the object as an argument, and it returns its data type. It only accepts one argument. For example, you could specify type("security") or type(7).
+
+Passing one function into another
+When working with functions, you often need to pass them through print() if you want to output the data type to the screen. This is the case when using a function like type(). Consider the following code:
+
+1
+print(type("This is a string"))
+Reset
+<class 'str'>
+It displays str, which means that the argument passed to the type() function is a string. This happens because the type() function is processed first and its output is passed as an argument to the print() function. 
+
+max() and min() 
+The max() function returns the largest numeric input passed into it. The min() function returns the smallest numeric input passed into it.
+
+The max() and min() functions accept arguments of either multiple numeric values or of an iterable like a list, and they return the largest or smallest value respectively.
+
+In a cybersecurity context, you could use these functions to identify the longest or shortest session that a user logged in for. If a specific user logged in seven times during a week, and you stored their access times in minutes in a list, you can use the max() and min() functions to find and print their longest and shortest sessions:
+
+123
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(min(time_list))
+print(max(time_list))
+Reset
+2
+57
+sorted()
+The sorted() function sorts the components of a list. The sorted() function also works on any iterable, like a string, and returns the sorted elements in a list. By default, it sorts them in ascending order. When given an iterable that contains numbers, it sorts them from smallest to largest; this includes iterables that contain numeric data as well as iterables that contain string data beginning with numbers. An iterable that contains strings that begin with alphabetic characters will be sorted alphabetically.
+
+The sorted() function takes an iterable, like a list or a string, as an input. So, for example, you can use the following code to sort the list of login sessions from shortest to longest:
+
+12
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(sorted(time_list))
+Reset
+[2, 12, 14, 19, 22, 32, 57]
+This displays the sorted list. 
+
+The sorted() function does not change the iterable that it sorts. The following code illustrates this:
+
+123
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(sorted(time_list))
+print(time_list)
+Reset
+[2, 12, 14, 19, 22, 32, 57]
+[12, 2, 32, 19, 57, 22, 14]
+The first print() function displays the sorted list. However, the second print() function, which does not include the sorted() function, displays the list as assigned to time_list in the first line of code.
+
+One more important detail about the sorted() function is that it cannot take lists or strings that have elements of more than one data type. For example, you can’t use the list [1, 2, "hello"].
+
+
+
+
+
+Import modules and libraries in Python
+Previously, you explored libraries and modules. You learned that a module is a Python file that contains additional functions, variables, classes, and any kind of runnable code. You also learned that a library is a collection of modules that provide code users can access in their programs. You were introduced to a few modules in the Python Standard Library and a couple of external libraries. In this reading, you'll learn how to import a module that exists in the Python Standard Library and use its functions. You'll also expand your understanding of external libraries. 
+
+The Python Standard Library
+The Python Standard Library is an extensive collection of Python code that often comes packaged with Python. It includes a variety of modules, each with pre-built code centered around a particular type of task. 
+
+For example, you were previously introduced to the the following modules in the Python Standard Library:
+
+The re module, which provides functions used for searching for patterns in log files
+
+The csv module, which provides functions used when working with .csv files
+
+The glob and os modules, which provide functions used when interacting with the command line
+
+The time and datetime modules, which provide functions used when working with timestamps
+
+Another Python Standard Library module is statistics. The statistics module includes functions used when calculating statistics related to numeric data. For example, mean() is a function in the statistics module that takes numeric data as input and calculates its mean (or average). Additionally, median() is a function in the statistics module that takes numeric data as input and calculates its median (or middle value).
+
+How to import modules from the Python Standard Library
+To access modules from the Python Standard Library, you need to import them. You can choose to either import a full module or to only import specific functions from a module. 
+
+Importing an entire module
+To import an entire Python Standard Library module, you use the import keyword. The import keyword searches for a module or library in a system and adds it to the local Python environment. After import, specify the name of the module to import. For example, you can specify import statistics to import the statistics module. This will import all the functions inside of the statistics module for use later in your code.
+
+As an example, you might want to use the mean() function from the statistics module to calculate the average number of failed login attempts per month for a particular user. In the following code block, the total number of failed login attempts for each of the twelve months is stored in a list called monthly_failed_attempts. Run this code and analyze how mean() can be used to calculate the average of these monthly failed login totals and store it in mean_failed_attempts:
+
+1234
+import statistics
+monthly_failed_attempts = [20, 17, 178, 33, 15, 21, 19, 29, 32, 15, 25, 19]
+mean_failed_attempts = statistics.mean(monthly_failed_attempts)
+print("mean:", mean_failed_attempts)
+Reset
+mean: 35.25
+The output returns a mean of 35.25. You might notice the outlying value of 178 and want to find the middle value as well. To do this through the median() function, you can use the following code:
+
+1234
+import statistics
+monthly_failed_attempts = [20, 17, 178, 33, 15, 21, 19, 29, 32, 15, 25, 19]
+median_failed_attempts = statistics.median(monthly_failed_attempts)
+print("median:", median_failed_attempts)
+Reset
+median: 20.5
+This gives you the value of 20.5, which might also be useful for analyzing the user's failed login attempt statistics.
+
+Note: When importing an entire Python Standard Library module, you need to identify the name of the module with the function when you call it. You can do this by placing the module name followed by a period (.) before the function name. For example, the previous code blocks use statistics.mean() and statistics.median() to call those functions. 
+
+Importing specific functions from a module
+To import a specific function from the Python Standard Library, you can use the from keyword. For example, if you want to import just the median() function from the statistics module, you can write from statistics import median.
+
+To import multiple functions from a module, you can separate the functions you want to import with a comma. For instance, from statistics import mean, median imports both the mean() and the median() functions from the statistics module.
+
+An important detail to note is that if you import specific functions from a module, you no longer have to specify the name of the module before those functions. You can examine this in the following code, which specifically imports only the median() and the mean() functions from the statistics module and performs the same calculations as the previous examples:
+
+123456
+from statistics import mean, median
+monthly_failed_attempts = [20, 17, 178, 33, 15, 21, 19, 29, 32, 15, 25, 19]
+mean_failed_attempts = mean(monthly_failed_attempts)
+print("mean:", mean_failed_attempts)
+median_failed_attempts = median(monthly_failed_attempts)
+print("median:", median_failed_attempts)
+Reset
+mean: 35.25
+median: 20.5
+It is no longer necessary to specify statistics.mean() or statistics.median() and instead the code incorporates these functions as mean() and median().
+
+External libraries
+In addition to the Python Standard Library, you can also download external libraries and incorporate them into your Python code. For example, previously you were introduced to Beautiful Soup (bs4) for parsing HTML files and NumPy (numpy) for arrays and mathematical computations. Before using them in a Jupyter Notebook or a Google Colab environment, you need to install them first.
+
+To install a library, such as numpy, in either environment, you can run the following line prior to importing the library:
+
+%pip install numpy
+
+This installs the library so you can use it in your notebook.
+
+After a library is installed, you can import it directly into Python using the import keyword in a similar way to how you used it to import modules from the Python Standard Library. For example, after the numpy install, you can use this code to import it:
+
+import numpy
+
+
+
+
+
+Ensure proper syntax and readability in Python
+Previously, you were introduced to the PEP 8 style guide and its stylistic guidelines for programmers working in Python. You also learned about how adding comments and using correct indentation makes your code more readable. Additionally, correct indentation ensures your code is executed properly. This reading explores these ideas further and also focuses on common items to check in the syntax of your code to ensure it runs. 
+
+Comments
+A comment is a note programmers make about the intentions behind their code. Comments make it easier for you and other programmers to read and understand your code. 
+
+It’s important to start your code with a comment that explains what the program does. Then, throughout the code, you should add additional comments about your intentions behind specific sections.
+
+When adding comments, you can add both single-line comments and multi-line comments.
+
+Single-line comments
+Single-line comments in Python begin with the (#) symbol. According to the PEP 8 style guide, it’s best practice to keep all lines in Python under 79 characters to maintain readability, and this includes comments.
+
+Single-line comments are often used throughout your program to explain the intention behind specific sections of code. For example, this might be when you're explaining simpler components of your program, such as the following for loop:
+
+# Print elements of 'computer_assets' list
+
+computer_assets = ["laptop1", "desktop20", "smartphone03"]
+
+for asset in computer_assets:
+
+    print(asset)
+
+Note: Comments are important when writing more complex code, like functions, or multiple loops or conditional statements. However, they're optional when writing less complex code like reassigning a variable.
+
+Multi-line comments
+Multi-line comments are used when you need more than 79 characters in a single comment. For example, this might occur when defining a function if the comment describes its inputs and their data types as well as its output. 
+
+There are two commonly used ways of writing multi-line comments in Python. The first is by using the hashtag (#) symbol over multiple lines:
+
+# remaining_login_attempts() function takes two integer parameters,
+
+# the maximum login attempts allowed and the total attempts made,
+
+# and it returns an integer representing remaining login attempts
+
+def remaining_login_attempts(maximum_attempts, total_attempts):
+
+    return maximum_attempts - total_attempts
+
+Another way of writing multi-line comments is by using documentation strings and not assigning them to a variable. Documentation strings, also called docstrings, are strings that are written over multiple lines and are used to document code. To create a documentation string, use triple quotation marks (""" """). 
+
+You could add the comment to the function in the previous example in this way too:
+
+"""
+
+remaining_login_attempts() function takes two integer parameters,
+
+the maximum login attempts allowed and the total attempts made,
+
+and it returns an integer representing remaining login attempts
+
+"""
+
+Correct indentation
+Indentation is space added at the beginning of a line of code. In Python, you should indent the body of conditional statements, iterative statements, and function definitions. Indentation is not only necessary for Python to interpret this syntax properly, but it can also make it easier for you and other programmers to read your code.
+
+The PEP 8 style guide recommends that indentations should be four spaces long. For example, if you had a conditional statement inside of a while loop, the body of the loop would be indented four spaces and the body of the conditional would be indented four spaces beyond that. This means the conditional would be indented eight spaces in total. 
+
+count = 0
+
+login_status = True
+
+while login_status == True:
+
+    print("Try again.")
+
+    count = count + 1
+
+    if count == 4:
+
+        login_status = False
+
+Maintaining correct syntax
+Syntax errors involve invalid usage of the Python language. They are incredibly common with Python, so focusing on correct syntax is essential in ensuring that your code runs. Awareness of common errors will help you more easily fix them. 
+
+Syntax errors often occur because of mistakes with data types or in the headers of conditional or iterative statements or of function definitions.
+
+Data types
+Correct syntax varies depending on data type:
+
+Place string data in quotation marks.
+
+Example: username = "bmoreno"
+
+Do not add quotation marks around integer, float, or Boolean data types.
+
+Examples: login_attempts = 5, percentage_successful = .8, login_status = True
+
+Place lists in brackets and separate the elements of a list with commas.
+
+Example: username_list = ["bmoreno", "tshah"]
+
+Colons in headers
+The header of a conditional or iterative statement or of a function definition must end with a colon. For example, a colon appears at the end of the header in the following function definition:
+
+def remaining_login_attempts(maximum_attempts, total_attempts):
+
+    return maximum_attempts - total_attempts
+
+Key takeaways
+The PEP 8 style guide provides recommendations for writing code that can be easily understood and read by other Python programmers. In order to make your intentions clear, you should incorporate comments into your code. Depending on the length of the comment, you can follow conventions for single-line or multi-line comments. It's also important to use correct indentation; this ensures your code will run as intended and also makes it easier to read. Finally, you should also be aware of common syntax issues so that you can more easily fix them. 
+
+Resources for more information
+Learning to write readable code can be challenging, so make sure to review the PEP 8 style guide and learn about additional aspects of code readability.
+
+PEP 8 - Style Guide for Python Code
+: The PEP 8 style guide contains all standards of Python code. When reading this guide, it's helpful to use the table of contents to navigate through the concepts you haven't learned yet.
+
+https://peps.python.org/pep-0008/
+
+
+
+
+
+Terms and definitions from Course 7, Week 2
+Argument (Python): The data brought into a function when it is called
+
+Built-in function: A function that exists within Python and can be called directly
+
+Comment: A note programmers make about the intention behind their code
+
+Function: A section of code that can be reused in a program
+
+Global variable: A variable that is available through the entire program
+
+Indentation: Space added at the beginning of a line of code
+
+Library: A collection of modules that provide code users can access in their programs
+
+Local variable: A variable assigned within a function
+
+Module: A Python file that contains additional functions, variables, classes, and any kind of runnable code
+
+Parameter (Python): An object that is included in a function definition for use in that function
+
+PEP 8 style guide: A resource that provides stylistic guidelines for programmers working in Python 
+
+Python Standard Library: An extensive collection of Python code that often comes packaged with Python
+
+Return statement: A Python statement that executes inside a function and sends information back to the function call 
+
+Style guide: A manual that informs the writing, formatting, and design of documents
+
+User-defined function: A function that programmers design for their specific needs
+
+

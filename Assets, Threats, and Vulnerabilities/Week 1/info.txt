@@ -1,0 +1,502 @@
+Understand risks, threats, and vulnerabilities
+When security events occur, you’ll need to work in close coordination with others to address the problem. Doing so quickly requires clear communication between you and your team to get the job done.
+
+Previously, you learned about three foundational security terms:
+
+Risk: Anything that can impact the confidentiality, integrity, or availability of an asset
+
+Threat: Any circumstance or event that can negatively impact assets
+
+Vulnerability: A weakness that can be exploited by a threat
+
+These words tend to be used interchangeably in everyday life. But in security, they are used to describe very specific concepts when responding to and planning for security events. In this reading, you’ll identify what each term represents and how they are related.
+
+Security risk
+Security plans are all about how an organization defines risk. However, this definition can vary widely by organization. As you may recall, a risk is anything that can impact the confidentiality, integrity, or availability of an asset. Since organizations have particular assets that they value, they tend to differ in how they interpret and approach risk.
+
+One way to interpret risk is to consider the potential effects that negative events can have on a business. Another way to present this idea is with this calculation:
+
+Likelihood x Impact = Risk
+
+For example, you risk being late when you drive a car to work. This negative event is more likely to happen if you get a flat tire along the way. And the impact could be serious, like losing your job. All these factors influence how you approach commuting to work every day. The same is true for how businesses handle security risks.
+
+In general, we calculate risk in this field to help:
+
+Prevent costly and disruptive events
+
+Identify improvements that can be made to systems and processes
+
+Determine which risks can be tolerated
+
+Prioritize the critical assets that require attention
+
+The business impact of a negative event will always depend on the asset and the situation. Your primary focus as a security professional will be to focus on the likelihood side of the equation by dealing with certain factors that increase the odds of a problem.
+
+Risk factors
+As you’ll discover throughout this course, there are two broad risk factors that you’ll be concerned with in the field:
+
+Threats
+
+Vulnerabilities
+
+The risk of an asset being harmed or damaged depends greatly on whether a threat takes advantage of vulnerabilities.
+
+Let’s apply this to the risk of being late to work. A threat would be a nail puncturing your tire, since tires are vulnerable to running over sharp objects. In terms of security planning, you would want to reduce the likelihood of this risk by driving on a clean road.
+
+Categories of threat
+Threats are circumstances or events that can negatively impact assets. There are many different types of threats. However, they are commonly categorized as two types: intentional and unintentional.
+
+For example, an intentional threat might be a malicious hacker who gains access to sensitive information by targeting a misconfigured application. An unintentional threat might be an employee who holds the door open for an unknown person and grants them access to a restricted area. Either one can cause an event that must be responded to.
+
+Categories of vulnerability
+Vulnerabilities are weaknesses that can be exploited by threats. There’s a wide range of vulnerabilities, but they can be grouped into two categories: technical and human.
+
+For example, a technical vulnerability can be misconfigured software that might give an unauthorized person access to important data. A human vulnerability can be a forgetful employee who loses their access card in a parking lot. Either one can lead to risk.
+
+
+
+
+
+Common classification requirements
+Asset management is the process of tracking assets and the risks that affect them. The idea behind this process is simple: you can only protect what you know you have. 
+
+Previously, you learned that identifying, tracking, and classifying assets are all important parts of asset management. In this reading, you’ll learn more about the purpose and benefits of asset classification, including common classification levels.
+
+A security professional taking inventory of a variety of boxes.
+Why asset management matters
+Keeping assets safe requires a workable system that helps businesses operate smoothly. Setting these systems up requires having detailed knowledge of the assets in an environment. For example, a bank needs to have money available each day to serve its customers. Equipment, devices, and processes need to be in place to ensure that money is available and secure from unauthorized access.
+
+Organizations protect a variety of different assets. Some examples might include:
+
+Digital assets such as customer data or financial records.
+
+Information systems that process data, like networks or software.
+
+Physical assets which can include facilities, equipment, or supplies.
+
+Intangible assets such as brand reputation or intellectual property.
+
+Regardless of its type, every asset should be classified and accounted for. As you may recall, asset classification is the practice of labeling assets based on sensitivity and importance to an organization. Determining each of those two factors varies, but the sensitivity and importance of an asset typically requires knowing the following:
+
+What you have
+
+Where it is
+
+Who owns it, and
+
+How important it is
+
+An organization that classifies its assets does so based on these characteristics. Doing so helps them determine the sensitivity and value of an asset.
+
+Common asset classifications
+Asset classification helps organizations implement an effective risk management strategy. It also helps them prioritize security resources, reduce IT costs, and stay in compliance with legal regulations.
+
+The most common classification scheme is: restricted, confidential, internal-only, and public.
+
+Restricted is the highest level. This category is reserved for incredibly sensitive assets,  like need-to-know information.
+
+Confidential refers to assets whose disclosure may lead to a significant negative impact on an organization.
+
+Internal-only describes assets that are available to employees and business partners.
+
+Public is the lowest level of classification. These assets have no negative consequences to the organization if they’re released.
+
+How this scheme is applied depends greatly on the characteristics of an asset. It might surprise you to learn that identifying an asset’s owner is sometimes the most complicated characteristic to determine.
+
+Note: Although many organizations adopt this classification scheme, there can be variability at the highest levels. For example, government organizations label their most sensitive assets as confidential instead of restricted.
+
+Challenges of classifying information
+Identifying the owner of certain assets is straightforward, like the owner of a building. Other types of assets can be trickier to identify. This is especially true when it comes to information.
+
+For example, a business might issue a laptop to one of its employees to allow them to work remotely. You might assume the business is the asset owner in this situation. But, what if the employee uses the laptop for personal matters, like storing their photos?
+
+Ownership is just one characteristic that makes classifying information a challenge. Another concern is that information can have multiple classification values at the same time. For example, consider a letter addressed to you in the mail. The letter contains some public information that’s okay to share, like your name. It also contains fairly confidential pieces of information that you’d rather only be available to certain people, like your address. You’ll learn more about how these challenges are addressed as you continue through the program.
+
+
+
+
+
+The emergence of cloud security
+One of the most significant technology developments this century has been the emergence of cloud computing. The United Kingdom's National Cyber Security Centre defines cloud computing as, “An on-demand, massively scalable service, hosted on shared infrastructure, accessible via the internet.”
+
+Earlier, you learned that most information is in the form of data, which is in a constant state of change. In recent years, businesses started moving their data to the cloud. The adoption of cloud-based services has complicated how information is kept safe online. In this reading, you’ll learn about these challenges and the opportunities they’ve created for security professionals.
+
+A cloud lifting a business out of a marketplace and into the sky.
+Soaring into the cloud
+Starting an online business used to be a complicated and costly process. In years past, companies had to build and maintain their own internal solutions to operate in the digital marketplace. Now, it’s much easier for anyone to participate because of the cloud.
+
+The availability of cloud technologies has drastically changed how businesses operate online. These new tools allow companies to scale and adapt quickly while also lowering their costs. Despite these benefits, the shift to cloud-based services has also introduced a range of new cybersecurity challenges that put assets at risk.
+
+Cloud-based services
+The term cloud-based services refers to a variety of on demand or web-based business solutions. Depending on a company’s needs and budget, services can range from website hosting, to application development environments, to entire back-end infrastructure.
+
+There are three main categories of cloud-based services:
+
+Software as a service (SaaS)
+
+Platform as a service (PaaS)
+
+Infrastructure as a service (IaaS)
+
+Software as a service (SaaS)
+SaaS refers to front-end applications that users access via a web browser. The service providers host, manage, and maintain all of the back-end systems for those applications. Common examples of SaaS services include applications like Gmail™ email service, Slack, and Zoom software.
+
+Platform as a service (PaaS)
+PaaS refers to back-end application development tools that clients can access online. Developers use these resources to write code and build, manage, and deploy their own apps. Meanwhile, the cloud service providers host and maintain the back-end hardware and software that the apps use to operate. Some examples of PaaS services include Google App Engine™ platform, Heroku®, and VMware Cloud Foundry. 
+
+Infrastructure as a service (IaaS)
+IaaS customers are given remote access to a range of back-end systems that are hosted by the cloud service provider. This includes data processing servers, storage, networking resources, and more. Resources are commonly licensed as needed, making it a cost-effective alternative to buying and maintaining on premises.
+
+Cloud-based services allow companies to connect with their customers, employees, and business partners over the internet. Some of the largest organizations in the world offer cloud-based services:
+
+Google Cloud Platform
+
+Microsoft Azure
+
+Cloud security
+Shifting applications and infrastructure over to the cloud can make it easier to operate an online business. It can also complicate keeping data private and safe. Cloud security is a growing subfield of cybersecurity that specifically focuses on the protection of data, applications, and infrastructure in the cloud.
+
+In a traditional model, organizations had their entire IT infrastructure on premises. Protecting those systems was entirely up to the internal security team in that environment. These responsibilities are not so clearly defined when part or all of an operational environment is in the cloud.
+
+For example, a PaaS client pays to access the resources they need to build their applications. So, it is reasonable to expect them to be responsible for securing the apps they build. On the other hand, the responsibility for maintaining the security of the servers they are accessing should belong to the cloud service provider because there are other clients using the same systems.
+
+In cloud security, this concept is known as the shared responsibility model. Clients are commonly responsible for securing anything that is directly within their control:
+
+Identity and access management
+
+Resource configuration
+
+Data handling
+
+Note: The amount of responsibility that is delegated to a service provider varies depending on the service being used: SaaS, PaaS, and IaaS.
+
+Cloud security challenges
+All service providers do their best to deliver secure products to their customers. Much of their success depends on preventing breaches and how well they can protect sensitive information. However, since data is stored in the cloud and accessed over the internet, several challenges arise:
+
+Misconfiguration is one of the biggest concerns. Customers of cloud-based services are responsible for configuring their own security environment. Oftentimes, they use out-of-the-box configurations that fail to address their specific security objectives.
+
+Cloud-native breaches are more likely to occur due to misconfigured services.
+
+Monitoring access might be difficult depending on the client and level of service.
+
+Meeting regulatory standards is also a concern, particularly in industries that are required by law to follow specific requirements such as HIPAA, PCI DSS, and GDPR.
+
+Many other challenges exist besides these. As more businesses adopt cloud-based services, there’s a growing need for cloud security professionals to meet a growing number of risks. Burning Glass, a leading labor market analytics firm, 
+ranks cloud security among the most in-demand skills in cybersecurity
+. 
+
+Key takeaways
+So much of the global marketplace has shifted to cloud-based services. Cloud technology is still new, resulting in the emergence of new security models and a range of security challenges. And it’s likely that other concerns might arise as more businesses become reliant on the cloud. Being familiar with the cloud and the different services that are available is an important step towards supporting any organizations efforts to protect information online. 
+
+Resources for more information
+Cloud security is one of the fastest growing subfields of cybersecurity. There are a variety of resources available online to learn more about this specialized topic.
+
+The U.K.’s National Cyber Security Centre
+ has a detailed guide for choosing, using, and deploying cloud services securely based on the shared responsibility model.
+
+The Cloud Security Alliance®
+ is an organization dedicated to creating secure cloud environments. They offer access to cloud security-specific research, certification, and products to users with a paid membership.
+
+CompTIA Cloud+
+ is a certificate program designed to teach you the foundational skills needed to become a cloud security specialist.
+
+
+
+
+ Security guidelines in action
+Organizations often face an overwhelming amount of risk. Developing a security plan from the beginning that addresses all risk can be challenging. This makes security frameworks a useful option.
+
+Previously, you learned about the NIST Cybersecurity Framework (CSF). A major benefit of the CSF is that it's flexible and can be applied to any industry. In this reading, you’ll explore how the NIST CSF can be implemented.
+
+The NIST CSFs five functions: identify, protect, detect, respond, and recover.
+Origins of the framework
+Originally released in 2014, NIST developed the Cybersecurity Framework to protect critical infrastructure in the United States. NIST was selected to develop the CSF because they are an unbiased source of scientific data and practices. NIST eventually adapted the CSF to fit the needs of businesses in the public and private sector. Their goal was to make the framework more flexible, making it easier to adopt for small businesses or anyone else that might lack the resources to develop their own security plans.
+
+Components of the CSF
+As you might recall, the framework consists of three main components: the core, tiers, and profiles. In the following sections, you'll learn more about each of these CSF components.
+
+Core
+The CSF core is a set of desired cybersecurity outcomes that help organizations customize their security plan. It consists of five functions, or parts: Identify, Protect, Detect, Respond, and Recover. These functions are commonly used as an informative reference to help organizations identify their most important assets and protect those assets with appropriate safeguards. The CSF core is also used to understand ways to detect attacks and develop response and recovery plans should an attack happen.
+
+Tiers
+The CSF tiers are a way of measuring the sophistication of an organization's cybersecurity program. CSF tiers are measured on a scale of 1 to 4. Tier 1 is the lowest score, indicating that a limited set of security controls have been implemented. Overall, CSF tiers are used to assess an organization's security posture and identify areas for improvement.
+
+Profiles
+The CSF profiles are pre-made templates of the NIST CSF that are developed by a team of industry experts. CSF profiles are tailored to address the specific risks of an organization or industry. They are used to help organizations develop a baseline for their cybersecurity plans, or as a way of comparing their current cybersecurity posture to a specific industry standard.
+
+Note: The core, tiers, and profiles were each designed to help any business improve their security operations. Although there are only three components, the entire framework consists of a complex system of subcategories and processes.
+
+Implementing the CSF
+As you might recall, compliance is an important concept in security. Compliance is the process of adhering to internal standards and external regulations. In other words, compliance is a way of measuring how well an organization is protecting their assets. The NIST Cybersecurity Framework (CSF) is a voluntary framework that consists of standards, guidelines, and best practices to manage cybersecurity risk. Organizations may choose to use the CSF to achieve compliance with a variety of regulations.
+
+Note: Regulations are rules that must be followed, while frameworks are resources you can choose to use.
+
+Since its creation, many businesses have used the NIST CSF. However, CSF can be a challenge to implement due to its high level of detail. It can also be tough to find where the framework fits in. For example, some businesses have established security plans, making it unclear how CSF can benefit them. Alternatively, some businesses might be in the early stages of building their plans and need a place to start.
+
+In any scenario, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) provides detailed guidance that any organization can use to implement the CSF. This is a quick overview and summary of their recommendations:
+
+Create a current profile of the security operations and outline the specific needs of your business.
+
+Perform a risk assessment to identify which of your current operations are meeting business and regulatory standards.
+
+Analyze and prioritize existing gaps in security operations that place the businesses assets at risk.
+
+Implement a plan of action to achieve your organization’s goals and objectives.
+
+Pro tip: Always consider current risk, threat, and vulnerability trends when using the NIST CSF. 
+
+You can learn more about implementing the CSF in 
+this report by CISA that outlines how the framework was applied in the commercial facilities sector
+.
+
+Industries embracing the CSF
+The NIST CSF has continued to evolve since its introduction in 2014. Its design is influenced by the standards and best practices of some of the largest companies in the world.
+
+A benefit of the framework is that it aligns with the security practices of many organizations across the global economy. It also helps with regulatory compliance that might be shared by business partners.
+
+
+
+
+
+Terms and definitions from Course 5, Week 1
+Asset: An item perceived as having value to an organization
+
+Asset classification: The practice of labeling assets based on sensitivity and importance to an organization
+
+Asset inventory: A catalog of assets that need to be protected
+
+Asset management: The process of tracking assets and the risks that affect them 
+
+Compliance: The process of adhering to internal standards and external regulations
+
+Data: Information that is translated, processed, or stored by a computer
+
+Data at rest: Data not currently being accessed
+
+Data in transit: Data traveling from one point to another
+
+Data in use: Data being accessed by one or more users
+
+Information security (InfoSec): The practice of keeping data in all states away from unauthorized users
+
+National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF): A voluntary framework that consists of standards, guidelines, and best practices to manage cybersecurity risk
+
+Policy: A set of rules that reduce risk and protect information
+
+Procedures: Step-by-step instructions to perform a specific security task
+
+Regulations: Rules set by a government or other authority to control the way something is done
+
+Risk: Anything that can impact confidentiality, integrity, or availability of an asset
+
+Standards: References that inform how to set policies
+
+Threat: Any circumstance or event that can negatively impact assets
+
+Vulnerability: A weakness that can be exploited by a threat
+
+
+
+
+Principle of least privilege
+Security controls are essential to keeping sensitive data private and safe. One of the most common controls is the principle of least privilege, also referred to as PoLP or least privilege. The principle of least privilege is a security concept in which a user is only granted the minimum level of access and authorization required to complete a task or function.
+
+Least privilege is a fundamental security control that supports the confidentiality, integrity, and availability (CIA) triad of information. In this reading, you'll learn how the principle of least privilege reduces risk, how it's commonly implemented, and why it should be routinely audited.
+
+Limiting access reduces risk
+Every business needs to plan for the risk of data theft, misuse, or abuse. Implementing the principle of least privilege can greatly reduce the risk of costly incidents like data breaches by:
+
+Limiting access to sensitive information
+
+Reducing the chances of accidental data modification, tampering, or loss
+
+Supporting system monitoring and administration
+
+Least privilege greatly reduces the likelihood of a successful attack by connecting specific resources to specific users and placing limits on what they can do. It's an important security control that should be applied to any asset. Clearly defining who or what your users are is usually the first step of implementing least privilege effectively.
+
+Note: Least privilege is closely related to another fundamental security principle, the separation of duties—a security concept that divides tasks and responsibilities among different users to prevent giving a single user complete control over critical business functions. You'll learn more about separation of duties in a different reading about identity and access management.
+
+Determining access and authorization
+To implement least privilege, access and authorization must be determined first. There are two questions to ask to do so: 
+
+Who is the user? 
+
+How much access do they need to a specific resource? 
+
+Determining who the user is usually straightforward. A user can refer to a person, like a customer, an employee, or a vendor. It can also refer to a device or software that's connected to your business network. In general, every user should have their own account. Accounts are typically stored and managed within an organization's directory service.
+
+These are the most common types of user accounts:
+
+Guest accounts are provided to external users who need to access an internal network, like customers, clients, contractors, or business partners.
+
+User accounts are assigned to staff based on their job duties.
+
+Service accounts are granted to applications or software that needs to interact with other software on the network.
+
+Privileged accounts have elevated permissions or administrative access.
+
+It's best practice to determine a baseline access level for each account type before implementing least privilege. However, the appropriate access level can change from one moment to the next. For example, a customer support representative should only have access to your information while they are helping you. Your data should then become inaccessible when the support agent starts working with another customer and they are no longer actively assisting you. Least privilege can only reduce risk if user accounts are routinely and consistently monitored.
+
+Pro tip: Passwords play an important role when implementing the principle of least privilege. Even if user accounts are assigned appropriately, an insecure password can compromise your systems.
+
+Auditing account privileges
+Setting up the right user accounts and assigning them the appropriate privileges is a helpful first step. Periodically auditing those accounts is a key part of keeping your company’s systems secure.
+
+There are three common approaches to auditing user accounts:
+
+Usage audits
+
+Privilege audits
+
+Account change audits
+
+As a security professional, you might be involved with any of these processes.
+
+Usage audits
+When conducting a usage audit, the security team will review which resources each account is accessing and what the user is doing with the resource. Usage audits can help determine whether users are acting in accordance with an organization’s security policies. They can also help identify whether a user has permissions that can be revoked because they are no longer being used.
+
+Privilege audits
+Users tend to accumulate more access privileges than they need over time, an issue known as privilege creep. This might occur if an employee receives a promotion or switches teams and their job duties change. Privilege audits assess whether a user's role is in alignment with the resources they have access to.
+
+Account change audits
+Account directory services keep records and logs associated with each user. Changes to an account are usually saved and can be used to audit the directory for suspicious activity, like multiple attempts to change an account password. Performing account change audits helps to ensure that all account changes are made by authorized users.
+
+Note: Most directory services can be configured to alert system administrators of suspicious activity.
+
+
+
+
+
+The data lifecycle
+Organizations of all sizes handle a large amount of data that must be kept private. You learned that data can be vulnerable whether it is at rest, in use, or in transit. Regardless of the state it is in, information should be kept private by limiting access and authorization.
+
+In security, data vulnerabilities are often mapped in a model known as the data lifecycle. Each stage of the data lifecycle plays an important role in the security controls that are put in place to maintain the CIA triad of information. In this reading, you will learn about the data lifecycle, the plans that determine how data is protected, and the specific types of data that require extra attention.
+
+The data lifecycle
+The data lifecycle is an important model that security teams consider when protecting information. It influences how they set policies that align with business objectives. It also plays an important role in the technologies security teams use to make information accessible.
+
+In general, the data lifecycle has five stages. Each describe how data flows through an organization from the moment it is created until it is no longer useful:
+
+Collect
+
+Store
+
+Use
+
+Archive
+
+Destroy
+
+Five stages of the data lifecycle: collection, storage, usage, archival, and destruction.
+Protecting information at each stage of this process describes the need to keep it accessible and recoverable should something go wrong.
+
+Data governance
+Businesses handle massive amounts of data every day. New information is constantly being collected from internal and external sources. A structured approach to managing all of this data is the best way to keep it private and secure.
+
+Data governance is a set of processes that define how an organization manages information. Governance often includes policies that specify how to keep data private, accurate, available, and secure throughout its lifecycle.
+
+Effective data governance is a collaborative activity that relies on people. Data governance policies commonly categorize individuals into a specific role:
+
+Data owner: the person that decides who can access, edit, use, or destroy their information.
+
+Data custodian: anyone or anything that's responsible for the safe handling, transport, and storage of information.
+
+Data steward: the person or group that maintains and implements data governance policies set by an organization.
+
+Businesses store, move, and transform data using a wide range of IT systems. Data governance policies often assign accountability to data owners, custodians, and stewards.
+
+Note: As a data custodian, you will primarily be  responsible for maintaining security and privacy rules for your organization.
+
+Protecting data at every stage
+Most security plans include a specific policy that outlines how information will be managed across an organization. This is known as a data governance policy. These documents clearly define procedures that should be followed to participate in keeping data safe. They place limits on who or what can access data. Security professionals are important participants in data governance. As a data custodian, you will be responsible for ensuring that data isn’t damaged, stolen, or misused.
+
+Legally protected information
+Data is more than just a bunch of 1s and 0s being processed by a computer. Data can represent someone's personal thoughts, actions, and choices. It can represent a purchase, a sensitive medical decision, and everything in between. For this reason, data owners should be the ones deciding whether or not to share their data. As a security professional, protecting a person's data privacy decisions must always be respected.
+
+Securing data can be challenging. In large part, that's because data owners generate more data than they can manage. As a result, data custodians and stewards sometimes lack direct, explicit instructions on how they should handle specific types of data. Governments and other regulatory agencies have bridged this gap by creating rules that specify the types of information that organizations must protect by default:
+
+PII is any information used to infer an individual's identity. Personally identifiable information, or PII, refers to information that can be used to contact or locate someone.
+
+PHI stands for protected health information.  In the U.S., it is regulated by the Health Insurance Portability and Accountability Act (HIPAA), which defines PHI as “information that relates to the past, present, or future physical or mental health or condition of an individual.” In the EU, PHI has a similar definition but it is regulated by the General Data Protection Regulation (GDPR).
+
+SPII is a specific type of PII that falls under stricter handling guidelines. The S stands for sensitive, meaning this is a type of personally identifiable information that should only be accessed on a need-to-know basis, such as a bank account number or login credentials.
+
+Overall, it's important to protect all types of personal information from unauthorized use and disclosure.
+
+
+
+
+Information privacy: Regulations and compliance
+Security and privacy have a close relationship. As you may recall, people have the right to control how their personal data is collected and used. Organizations also have a responsibility to protect the information they are collecting from being compromised or misused. As a security professional, you will be highly involved in these efforts.
+
+Previously, you learned how regulations and compliance reduce security risk. To review, refer to 
+the reading about how security controls, frameworks, and compliance regulations
+ are used together to manage security and minimize risk. In this reading, you will learn how information privacy regulations affect data handling practices. You'll also learn about some of the most influential security regulations in the world. 
+
+A Venn diagram of privacy and security.
+Information security vs. information privacy
+Security and privacy are two terms that often get used interchangeably outside of this field. Although the two concepts are connected, they represent specific functions:
+
+Information privacy refers to the protection of unauthorized access and distribution of data.
+
+Information security (InfoSec) refers to the practice of keeping data in all states away from unauthorized users.
+
+The key difference: Privacy is about providing people with control over their personal information and how it's shared. Security is about protecting people’s choices and keeping their information safe from potential threats.
+
+For example, a retail company might want to collect specific kinds of personal information about its customers for marketing purposes, like their age, gender, and location. How this private information will be used should be disclosed to customers before it's collected. In addition, customers should be given an option to opt-out if they decide not to share their data.
+
+Once the company obtains consent to collect personal information, it might implement specific security controls in place to protect that private data from unauthorized access, use, or disclosure. The company should also have security controls in place to respect the privacy of all stakeholders and anyone who chose to opt-out.
+
+Note: Privacy and security are both essential for maintaining customer trust and brand reputation.
+
+Why privacy matters in security
+Data privacy and protection are topics that started gaining a lot of attention in the late 1990s. At that time, tech companies suddenly went from processing people’s data to storing and using it for business purposes. For example, if a user searched for a product online, companies began storing and sharing access to information about that user’s search history with other companies. Businesses were then able to deliver personalized shopping experiences to the user for free.
+
+Eventually this practice led to a global conversation about whether these organizations had the right to collect and share someone’s private data. Additionally, the issue of data security became a greater concern; the more organizations collected data, the more vulnerable it was to being abused, misused, or stolen.
+
+Many organizations became more concerned about the issues of data privacy. Businesses became more transparent about how they were collecting, storing, and using information. They also began implementing more security measures to protect people's data privacy. However, without clear rules in place, protections were inconsistently applied.
+
+Note: The more data is collected, stored, and used, the more vulnerable it is to breaches and threats.
+
+Notable privacy regulations
+Businesses are required to abide by certain laws to operate. As you might recall, regulations are rules set by a government or another authority to control the way something is done. Privacy regulations in particular exist to protect a user from having their information collected, used, or shared without their consent. Regulations may also describe the security measures that need to be in place to keep private information away from threats.
+
+Three of the most influential industry regulations that every security professional should know about are:
+
+General Data Protection Regulation (GDPR)
+
+Payment Card Industry Data Security Standard (PCI DSS)
+
+Health Insurance Portability and Accountability Act (HIPAA)
+
+GDPR
+GDPR is a set of rules and regulations developed by the European Union (EU) that puts data owners in total control of their personal information. Under GDPR, types of personal information include a person's name, address, phone number, financial information, and medical information.
+
+The GDPR applies to any business that handles the data of EU citizens or residents, regardless of where that business operates. For example, a US based company that handles the data of EU visitors to their website is subject to the GDPRs provisions.
+
+PCI DSS
+PCI DSS is a set of security standards formed by major organizations in the financial industry. This regulation aims to secure credit and debit card transactions against data theft and fraud.
+
+HIPAA
+HIPAA is a U.S. law that requires the protection of sensitive patient health information. HIPAA prohibits the disclosure of a person's medical information without their knowledge and consent.
+
+Note: These regulations influence data handling at many organizations around the world even though they were developed by specific nations.
+
+Several other security and privacy compliance laws exist. Which ones your organization needs to follow will depend on the industry and the area of authority. Regardless of the circumstances, regulatory compliance is important to every business.
+
+Security assessments and audits
+Businesses should comply with important regulations in their industry. Doing so validates that they have met a minimum level of security while also demonstrating their dedication to maintaining data privacy.
+
+Meeting compliance standards is usually a continual, two-part process of security audits and assessments:
+
+A security audit is a review of an organization's security controls, policies, and procedures against a set of expectations.
+
+A security assessment is a check to determine how resilient current security implementations are against threats.
+
+For example, if a regulation states that multi-factor authentication (MFA) must be enabled for all administrator accounts, an audit might be conducted to check those user accounts for compliance. After the audit, the internal team might perform a security assessment that determines many users are using weak passwords. Based on their assessment, the team could decide to enable MFA on all user accounts to improve their overall security posture.
+
+Note: Compliance with legal regulations, such as GDPR, can be determined during audits.
+
+As a security analyst, you are likely to be involved with security audits and assessments in the field. Businesses usually perform security audits less frequently, approximately once per year. Security audits may be performed both internally and externally by different third-party groups.
+
+In contrast, security assessments are usually performed more frequently, about every three-to-six months. Security assessments are typically performed by internal employees, often as preparation for a security audit. Both evaluations are incredibly important ways to ensure that your systems are effectively protecting everyone's privacy.

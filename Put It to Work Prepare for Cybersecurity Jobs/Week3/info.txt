@@ -1,0 +1,126 @@
+The purpose and impact of stakeholders
+You previously learned about incident escalation and the various security incident classification types. You also learned about the impact these incidents can have on an organization’s business operations.
+
+This reading will explore the individuals who have a significant interest in those business operations: stakeholders. 
+
+Who are stakeholders?
+A stakeholder is defined as an individual or group that has an interest in any decision or activity of an organization. A big part of what you’ll do as a security analyst is report your findings to various security stakeholders. 
+
+Levels of stakeholders 
+There are many levels of stakeholders within larger organizations. As an entry-level analyst, you might only communicate directly with a few of them. Although you might not communicate with all of the security stakeholders in an organization, it’s important to have an understanding of who key stakeholders are:
+
+A Chief Information Security Officer, also known as the CISO, is the highest level of security stakeholder. You are unlikely to communicate directly with this stakeholder as an entry-level analyst. 
+
+A Chief Financial Officer, also known as the CFO, is another high-level stakeholder that you’re unlikely to communicate with directly.
+
+An operations manager oversees the day-to-day security operations. These individuals lead teams related to the development and implementation of security strategies that protect an organization from cyber threats.
+
+A cybersecurity risk manager is a professional responsible for leading efforts to identify, assess, and mitigate security risks within an organization.
+
+CFOs and CISOs are focused on the big picture, like the potential financial burden of a security incident, whereas other roles like operations managers are more focused on the impact on day-to-day operations. Although you will rarely interact directly with high-level security stakeholders, it’s still important to recognize their relevance.
+
+Stakeholder communications for entry-level analysts
+Two examples of security stakeholders with whom you might regularly communicate are operations managers and risk managers. When you report to these stakeholders, you'll need to clearly communicate the current security issue and its possible causes. The operations managers will then determine next steps and coordinate other team members to remediate or resolve the issue. 
+
+For example, you might report multiple failed login attempts by an employee to your operations manager. This stakeholder might contact the employee’s supervisor to ensure the occurrence is a genuine issue of entering the wrong password or determine if the account has been compromised. The stakeholder and supervisor might also need to discuss the consequences for day-to-day operations if genuine failed login attempts can lead to account lockouts that might impact business operations. As an entry-level security analyst, you might play a role in implementing preventative measures once next steps have been determined.
+
+From one stakeholder to the next  
+Operations managers and risk managers are stakeholders who rely on entry-level analysts and other team members to keep them informed of security events in day-to-day operations. These stakeholders commonly report back to the CISOs and CFOs to give a broader narrative of the organization's overall security picture. Although you won't regularly communicate with high-level stakeholders, it's important to recognize that your efforts still reach the highest levels of security stakeholders in the organization. These other members of your team keep those top-level stakeholders informed on the security measures and protocols in place that are continuously helping to protect the organization.
+
+
+
+
+
+Communicate effectively with stakeholders
+You previously learned about security stakeholders and their significance in an organization. In this reading, you’ll learn the importance of clearly communicating to stakeholders to ensure they have a thorough understanding of the information you’re sharing and why it’s meaningful to the organization. 
+
+Get to the point
+Security stakeholders have roles and responsibilities that are time sensitive and impact the business. It’s important that any communications they receive, and the actions they need to take, are clear. To get to the point in your communications, ask yourself: 
+
+What do I want this person to know? 
+
+Why is it important for them to know it? 
+
+When do they need to take action?
+
+How do I explain the situation in a nontechnical manner?
+
+Follow the protocols 
+When you first join a security team, you’ll want to learn about the different protocols and procedures in place for communicating with stakeholders and other members of the organization. It’s important to make sure you know what applications and forms of communications are acceptable before you begin communicating with stakeholders, such as in-person meetings, video-conferencing, emails, or company chat applications.
+
+Communicate with impact
+You previously learned about the different stakeholders within an organization and what specific areas they’re focused on. When you first begin your career in the cybersecurity field, you're more likely to interact with lower-level stakeholders, like operations managers or security risk managers, who are interested in the day-to-day operations, such as logging. Senior-level stakeholders might be more interested in the underlying risks, such as the potential financial burden of a security incident—as opposed to the details around logs. 
+
+When you communicate with an operations manager, make sure you address relevant information that relates to their daily responsibilities, such as anomalies in data logs that you are escalating. Concentrating on a manager’s daily responsibilities will help you communicate the need-to-know information to that individual. 
+
+Communication methods
+Your method of communication will vary, depending on the type of information you’re sharing. Knowing which communication channels are appropriate for different scenarios is a great skill to help you communicate effectively with stakeholders. Here are a few ways you might choose to communicate:
+
+Instant messaging
+
+Emailing
+
+Video calling
+
+Phone calls
+
+Sharing a spreadsheet of data
+
+Sharing a slideshow presentation 
+
+If your message is straightforward, an instant message or phone call might be the route to take. If you have to describe a complex situation with multiple layers, an email or in-person meeting might be the better option. If you’re providing a lot of data and numbers, sharing a graph might be the best solution. Each situation helps you determine the best means of communication. 
+
+
+
+
+
+Create visual dashboards for impactful cybersecurity communications
+You previously learned about security stakeholders, the people responsible for protecting the data and systems of various departments of an organization. An entry-level analyst might communicate directly or indirectly with these individuals. If you do end up communicating with a stakeholder, it’s important to use the right method of communication. This reading will further elaborate on the significance of using visual dashboards to communicate information to stakeholders. Dashboards can include charts, graphs, and even infographics. You’ll learn more about when to use visual communication strategies in this reading. 
+
+Using visuals to communicate effectively
+Security is about protecting a company from threats that can affect its reputation and finances. Oftentimes, responding to threats quickly and effectively depends on clear communications between the stakeholders who are involved.
+
+In the cybersecurity field, the stakeholders you'll deal with will often be busy with other responsibilities. Showing them important information visually is a great way to gain their input and support to address security challenges that arise. Visuals help provide these decision-makers with actionable information that can help them identify potential risks to the organization's security posture.
+
+Visual dashboards
+A visual dashboard is a way of displaying various types of data quickly in one place. Visual dashboards are useful tools that can be used to communicate stories to stakeholders about security events—especially when they involve numbers and data.
+
+Dashboards can be simple or complex depending on the information you're communicating. A simple dashboard might contain a single chart, while a complex one can include multiple detailed charts, graphs, and tables. Deciding which type to use will depend on the situation and story you are telling. However, attention to detail and accurately representing information is important anytime you're communicating data to stakeholders.
+
+Pro tip: Programs like Google Sheets and Apache OpenOffice are tools that can be used to create visual dashboards.
+
+When to use visual communication
+Security is often a team effort. Everyone must work together to ensure an organization is properly protected from bad actors. Knowing how to communicate with your colleagues is a big part of the team-focused aspect. 
+
+Sometimes it’s enough to send a simple email update. Other times you might want to include a document attachment that further elaborates on a specific topic. A simple phone call can also be valuable because it allows you to quickly communicate the necessary information without having to wait for a response to an email or message. Other times, the best way to communicate is through visuals. 
+
+For example, consider a situation where your supervisor has asked you to provide them with results from a recent internal audit of five different departments within the organization. The audit gathered data showing how many phishing emails each department clicked over the last five months. This is an ideal opportunity to tell this story using visualization tools. Instead of sending an email that simply describes what the findings are, a graph or chart will clearly illustrate those findings, making them easier for the stakeholder to understand quickly and easily. 
+
+
+
+
+
+Juliana’s story: Effective communication
+Throughout this course, you’ve been following the story of Juliana Soto. Juliana was recently hired as a cybersecurity analyst by Right-On-Time Payment Solutions, a payment processing company that handles sensitive customer information. In 
+the reading about attention to detail
+, Juliana had to deal with two different types of security incidents, and she used her company’s escalation policy to properly escalate the two incidents. Now you will review how Juliana handled communication with stakeholders after escalating the incidents.
+
+Communicating with stakeholders after an incident
+Days after escalating the two incidents, Juliana’s manager asks her to communicate information about the incidents to stakeholders. 
+
+Communicating about incident #1
+One of the incidents dealt with an employee being locked out of their account due to multiple failed login attempts. Juliana’s manager was recently asked to provide a report that reviews how many departments have experienced locked employee accounts due to failed login attempts over the last month. The security team shared data that details the number of locked employee accounts due to multiple failed login attempts from five different departments.
+
+Juliana’s manager will report the information to the senior executives of each of the five departments. The manager asks Juliana to display the data in a way that communicates the incident clearly to these stakeholders. For this task, Juliana decides to put together a visual dashboard to represent the data because the communication is primarily focused on numbers. Her dashboard will use charts and graphs to relay important information, like the number of  employees who have been locked out of their accounts in the last month. Juliana's visual dashboard makes it easier for the high-level stakeholders to review incident #1 and determine a course of action. 
+
+Communicating about incident #2
+Juliana’s manager has also been informed that the Chief Information Security Officer (CISO) wants more information about what took place during the second incident, which involved an attacker almost compromising a system that stores customers’ private data. This communication will include a more detailed report that establishes what processes and procedures worked well during attackers' attempts to compromise the system and what processes and procedures might need to be revised. Because this is a more detailed communication, Juliana decides to put together a detailed document with timelines that clearly explain what happened. The document also includes her thoughts on what the security team, data owners, and data processors could have done differently to protect the system in question. She shares the report with her manager so they can review it.
+
+
+
+
+
+Terms and definitions from Course 8, Week 3
+Stakeholder: An individual or a group that has an interest in any decision or activity of an organization
+
+Visual dashboard: A way of displaying various types of data quickly in one place

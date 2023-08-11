@@ -1,0 +1,408 @@
+Essential Python components for automation
+Throughout this course, you explored coding in Python. You've focused on variables, conditional statements, iterative statements, functions, and a variety of ways to work with strings and lists. In this reading, you will explore why these are all essential components when automating tasks through Python, and you'll be introduced to another necessary component: working with files. 
+
+Automating tasks in Python
+Automation is the use of technology to reduce human and manual effort to perform common and repetitive tasks. As a security analyst, you will primarily use Python to automate tasks.
+
+You have encountered multiple examples of how to use Python for automation in this course, including investigating logins, managing access, and updating devices.
+
+Automating cybersecurity-related tasks requires understanding the following Python components that you've worked with in this course:
+
+Variables
+A variable is a container that stores data. Variables are essential for automation. Without them, you would have to individually rewrite values for each action you took in Python.
+
+Conditional statements
+A conditional statement is a statement that evaluates code to determine if it meets a specified set of conditions. Conditional statements allow you to check for conditions before performing actions. This is much more efficient than manually evaluating whether to apply an action to each separate piece of data.
+
+Iterative statements
+An iterative statement is code that repeatedly executes a set of instructions. You explored two kinds of iterative statements: for loops and while loops. In both cases, they allow you to perform the same actions a certain number of times without the need to retype the same code each time. Using a for loop allows you to automate repetition of that code based on a sequence, and using a while loop allows you to automate the repetition based on a condition.
+
+Functions
+A function is a section of code that can be reused in a program. Functions help you automate your tasks by reducing the need to incorporate the same code multiple places in a program. Instead, you can define the function once and call it wherever you need it. 
+
+You can develop your own functions based on your particular needs. You can also incorporate the built-in functions that exist directly in Python without needing to manually code them.
+
+Techniques for working with strings
+String data is one of the most common data types that you'll encounter when automating cybersecurity tasks through Python, and there are a lot of techniques that make working with strings efficient. You can use bracket notation to access characters in a string through their indices. You can also use a variety of functions and methods when working with strings, including str(), len(), and .index().
+
+Techniques for working with lists
+List data is another common data type. Like with strings, you can use bracket notation to access a list element through its index. Several methods also help you with automation when working with lists. These include .insert(), .remove(), .append(), and .index().
+
+Example: Counting logins made by a flagged user
+As one example, you may find that you need to investigate the logins of a specific user who has been flagged for unusual activity. Specifically, you are responsible for counting how many times this user has logged in for the day. If you are given a list identifying the username associated with each login attempt made that day, you can automate this investigation in Python.
+
+To automate the investigation, you'll need to incorporate the following Python components:
+
+A for loop will allow you to iterate through all the usernames in the list. 
+
+Within the for loop, you should incorporate a conditional statement to examine whether each username in the list matches the username of the flagged user.
+
+When the condition evaluates to True, you also need to increment a counter variable that keeps track of the number of times the flagged user appears in the list.
+
+Additionally, if you want to reuse this code multiple times, you can incorporate it into a function. The function can include parameters that accept the username of the flagged user and the list to iterate through. (The list would contain the usernames associated with all login attempts made that day.) The function can use the counter variable to return the number of logins for that flagged user.
+
+Working with files in Python
+One additional component of automating cybersecurity-related tasks in Python is understanding how to work with files. Security-related data will often be initially found in log files. A log is a record of events that occur within an organization's systems. In logs, lines are often appended to the record as time progresses.
+
+Two common file formats for security logs are .txt files and .csv files. Both .txt and .csv files are types of text files, meaning they contain only plain text. They do not contain images and do not specify graphical properties of the text, including font, color, or spacing. In a .csv file, or a "comma-separated values" file, the values are separated by commas. In a .txt file, there is not a specific format for separating values, and they may be separated in a variety of ways, including spaces.
+
+You can easily extract data from .txt and .csv files. You can also convert both into other file formats.
+
+Coming up, you'll learn how to import, read from, and write to files. You will also explore how to structure the information contained in files.
+
+
+
+
+
+Import files into Python
+Previously, you explored how to open files in Python, convert them into strings, and read them. In this reading, you'll review the syntax needed for this. You'll also focus on why the ability to work with files is important for security analysts using Python, and you will learn about writing files.
+
+Working with files in cybersecurity 
+Security analysts may need to access a variety of files when working in Python. Many of these files will be logs. A log is a record of events that occur within an organization's systems.
+
+For instance, there may be a log containing information on login attempts. This might be used to identify unusual activity that signals attempts made by a malicious actor to access the system.
+
+As another example, malicious actors that have breached the system might be capable of attacking software applications. An analyst might need to access a log that contains information on software applications that are experiencing issues.
+
+Opening files in Python
+To open a file called "update_log.txt" in Python for purposes of reading it, you can incorporate the following line of code:
+
+with open("update_log.txt", "r") as file:
+
+This line consists of the with keyword, the open() function with its two parameters, and the as keyword followed by a variable name. You must place a colon (:) at the end of the line.
+
+with
+The keyword with handles errors and manages external resources when used with other functions. In this case, it's used with the open() function in order to open a file. It will then manage the resources by closing the file after exiting the with statement.
+
+Note: You can also use the open() function without the with keyword. However, you should close the file you opened to ensure proper handling of the file. 
+
+open()
+The open() function opens a file in Python.
+
+The first parameter identifies the file you want to open. In the following file structure, "update_log.txt" is located in the same directory as the Python file that will access it, "log_parser.ipynb":
+
+In this file structure, update_log.txt is in the same directory as the log_parser.ipynb file, but access_log.txt is not.
+Because they're in the same directory, only the name of the file is required. The code can be written as with open("update_log.txt", "r") as file:.
+
+However, "access_log.txt" is not in the same directory as the Python file "log_parser.ipynb". Therefore, it's necessary to specify its absolute file path. A file path is the location of a file or directory. An absolute file path starts from the highest-level directory, the root. In the following code, the first parameter of the open() function includes the absolute file path to "access_log.txt":
+
+with open("/home/analyst/logs/access_log.txt", "r") as file:
+
+Note: In Python, the names of files or their file paths can be handled as string data, and like all string data, you must place them in quotation marks.
+
+The second parameter of the open() function indicates what you want to do with the file. In both of these examples, the second parameter is "r", which indicates that you want to read the file. Alternatively, you can use "w" if you want to write to a file or "a" if you want to append to a file.
+
+as
+When you open a file using with open(), you must provide a variable that can store the file while you are within the with statement. You can do this through the keyword as followed by this variable name. The keyword as assigns a variable that references another object. The code with open("update_log.txt", "r") as file: assigns file to reference the output of the open() function within the indented code block that follows it.
+
+Reading files in Python
+After you use the code with open("update_log.txt", "r") as file: to import "update_log.txt" into the file variable, you should indicate what to do with the file on the indented lines that follow it. For example, this code uses the .read() method to read the contents of the file:
+
+with open("update_log.txt", "r") as file:
+
+    updates = file.read()
+
+print(updates)
+
+The .read() method converts files into strings. This is necessary in order to use and display the contents of the file that was read.
+
+In this example, the file variable is used to generate a string of the file contents through .read(). This string is then stored in another variable called updates. After this, print(updates) displays the string.
+
+Once the file is read into the updates string, you can perform the same operations on it that you might perform with any other string. For example, you could use the .index() method to return the index where a certain character or substring appears. Or, you could use len() to return the length of this string.
+
+Writing files in Python
+Security analysts may also need to write to files. This could happen for a variety of reasons. For example, they might need to create a file containing the approved usernames on a new allow list. Or, they might need to edit existing files to add data or to adhere to policies for standardization.
+
+To write to a file, you will need to open the file with "w" or "a" as the second argument of open(). 
+
+You should use the "w" argument when you want to replace the contents of an existing file. When working with the existing file update_log.txt, the code with open("update_log.txt", "w") as file: opens it so that its contents can be replaced. 
+
+Additionally, you can use the "w" argument to create a new file. For example, with open("update_log2.txt", "w") as file: creates and opens a new file called "update_log2.txt". 
+
+You should use the "a" argument if you want to append new information to the end of an existing file rather than writing over it. The code with open("update_log.txt", "a") as file: opens "update_log.txt" so that new information can be appended to the end. Its existing information will not be deleted.
+
+Like when opening a file to read from it, you should indicate what to do with the file on the indented lines that follow when you open a file to write to it. With both "w" and "a", you can use the .write() method. The .write() method writes string data to a specified file. 
+
+The following example uses the .write() method to append the content of the line variable to the file "access_log.txt".
+
+line = "jrafael,192.168.243.140,4:56:27,True"
+
+with open("access_log.txt", "a") as file:
+
+    file.write(line)
+
+Note: Calling the .write() method without using the with keyword when importing the file might result in its arguments not being completely written to the file if the file is not properly closed in another way.
+
+
+
+
+
+Work with files in Python
+You previously explored how to open files in Python as well as how to read them and write to them. You also examined how to adjust the structure of file contents through the .split() method. In this reading, you'll review the .split() method, and you'll also learn an additional method that can help you work with file contents. 
+
+Parsing
+Part of working with files involves structuring its contents to meet your needs. Parsing is the process of converting data into a more readable format. Data may need to become more readable in a couple of different ways. First, certain parts of your Python code may require modification into a specific format. By converting data into this format, you enable Python to process it in a specific way. Second, programmers need to read and interpret the results of their code, and parsing can also make the data more readable for them.
+
+Methods that can help you parse your data include .split() and .join().
+
+.split()
+The basics of .split()
+The .split() method converts a string into a list. It separates the string based on a specified character that's passed into .split() as an argument. 
+
+In the following example, the usernames in the approved_users string are separated by a comma. For this reason, a string containing the comma (",") is passed into .split() in order to parse it into a list. Run this code and analyze the different contents of approved_users before and after the .split() method is applied to it:
+
+1234
+approved_users = "elarson,bmoreno,tshah,sgilmore,eraab"
+print("before .split():", approved_users)
+approved_users = approved_users.split(",")
+print("after .split():", approved_users)
+Reset
+before .split(): elarson,bmoreno,tshah,sgilmore,eraab
+after .split(): ['elarson', 'bmoreno', 'tshah', 'sgilmore', 'eraab']
+Before the .split() method is applied to approved_users, it contains a string, but after it is applied, this string is converted to a list.
+
+If you do not pass an argument into .split(), it will separate the string every time it encounters a whitespace.
+
+Note: A variety of characters are considered whitespaces by Python. These characters include spaces between characters, returns for new lines, and others.
+
+The following example demonstrates how a string of usernames that are separated by space can be split into a list through the .split() method:
+
+1234
+removed_users = "wjaffrey jsoto abernard jhill awilliam"
+print("before .split():", removed_users)
+removed_users = removed_users.split()
+print("after .split():", removed_users)
+Reset
+before .split(): wjaffrey jsoto abernard jhill awilliam
+after .split(): ['wjaffrey', 'jsoto', 'abernard', 'jhill', 'awilliam']
+Because an argument isn't passed into .split(), Python splits the removed_users string at each space when separating it into a list.
+
+Applying .split() to files
+The .split() method allows you to work with file content as a list after you've converted it to a string through the .read() method. This is useful in a variety of ways. For example, if you want to iterate through the file contents in a for loop, this can be easily done when it's converted into a list.
+
+The following code opens the "update_log.txt" file. It then reads all of the file contents into the updates variable as a string and splits the string in the updates variable into a list by creating a new element at each whitespace:
+
+with open("update_log.txt", "r") as file:
+
+    updates = file.read()
+
+updates = updates.split()
+
+After this, through the updates variable, you can work with the contents of the "update_log.txt" file in parts of your code that require it to be structured as a list. 
+
+Note: Because the line that contains .split() is not indented as part of the with statement, the file closes first. Closing a file as soon as it is no longer needed helps maintain code readability. Once a file is read into the updates variable, it is not needed and can be closed.
+
+.join()
+The basics of .join()
+If you need to convert a list into a string, there is also a method for that. The .join() method concatenates the elements of an iterable into a string. The syntax used with .join() is distinct from the syntax used with .split() and other methods that you've worked with, such as .index(). 
+
+In methods like .split() or .index(), you append the method to the string or list that you're working with and then pass in other arguments. For example, the code usernames.index(2), appends the .index() method to the variable usernames, which contains a list. It passes in 2 as the argument to indicate which element to return.
+
+However, with .join(), you must pass the list that you want to concatenate into a string in as an argument. You append .join() to a character that you want to separate each element with once they are joined into a string.
+
+For example, in the following code, the approved_users variable contains a list. If you want to join that list into a string and separate each element with a comma, you can use ",".join(approved_users). Run the code and examine what it returns:
+
+1234
+approved_users = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+print("before .join():", approved_users)
+approved_users = ",".join(approved_users)
+print("after .join():", approved_users)
+Reset
+before .join(): ['elarson', 'bmoreno', 'tshah', 'sgilmore', 'eraab']
+after .join(): elarson,bmoreno,tshah,sgilmore,eraab
+Before .join() is applied, approved_users is a list of five elements. After it is applied, it is a string with each username separated by a comma.
+
+Note: Another way to separate elements when using the .join() method is to use "\n", which is the newline character. The "\n" character indicates to separate the elements by placing them on new lines.
+
+Applying .join() to files
+When working with files, it may also be necessary to convert its contents back into a string. For example, you may want to use the .write() method. The .write() method writes string data to a file. This means that if you have converted a file's contents into a list while working with it, you'll need to convert it back into a string before using .write(). You can use the .join() method for this.
+
+You already examined how .split() could be applied to the contents of the "update_log.txt" file once it is converted into a string through .read() and stored as updates:
+
+with open("update_log.txt", "r") as file:
+
+    updates = file.read()
+
+updates = updates.split()
+
+After you're through performing operations using the list in the updates variable, you might want to replace "update_log.txt" with the new contents. To do so, you need to first convert updates back into a string using .join(). Then, you can open the file using a with statement and use the .write() method to write the updates string to the file:
+
+updates = " ".join(updates)
+
+with open("update_log.txt", "w") as file
+
+    file.write(updates)
+
+The code " ".join(updates) indicates to separate each of the list elements in updates with a space once joined back into a string. And because "w" is specified as the second argument of open(), Python will overwrite the contents of "update_log.txt" with the string currently in the updates variable. 
+
+
+
+
+
+
+Explore debugging techniques
+Previously, you examined three types of errors you may encounter while working in Python and explored strategies for debugging these errors. This reading further explores these concepts with additional strategies and examples for debugging Python code.
+
+Types of errors 
+It's a normal part of developing code in Python to get error messages or find that the code you're running isn't working as you intended. The important thing is that you can figure out how to fix errors when they occur. Understanding the three main types of errors can help. These types include syntax errors, logic errors, and exceptions.
+
+Syntax errors 
+A syntax error is an error that involves invalid usage of a programming language. Syntax errors occur when there is a mistake with the Python syntax itself. Common examples of syntax errors include forgetting a punctuation mark, such as a closing bracket for a list or a colon after a function header.  
+
+When you run code with syntax errors, the output will identify the location of the error with the line number and a portion of the affected code. It also describes the error. Syntax errors often begin with the label  "SyntaxError:" . Then, this is followed by a  description of the error. The description might simply be "invalid syntax" . Or if you forget a closing parentheses on a function, the description might be "unexpected EOF while parsing". "EOF" stands for "end of file."  
+
+The following code contains a syntax error. Run it and examine its output:
+
+12
+message = "You are debugging a syntax error
+print(message)
+Reset
+Error on line 1:
+    message = "You are debugging a syntax error
+                                              ^
+SyntaxError: EOL while scanning string literal
+This outputs the message "SyntaxError: EOL while scanning string literal". "EOL" stands for "end of line". The error message also indicates that the error happens on the first line. The error occurred because a quotation mark was missing at the end of the string on the first line. You can fix it by adding that quotation mark.
+
+Note: You will sometimes encounter the error label "IndentationError" instead of "SyntaxError". "IndentationError" is a subclass of "SyntaxError" that occurs when the indentation used with a line of code is not syntactically correct. 
+
+Logic errors 
+A logic error is an error that results when the logic used in code produces unintended results.  Logic errors may not produce error messages. In other words, the code will not do what you expect it to do, but it is still valid to the interpreter. 
+
+For example, using the wrong logical operator, such as a greater than or equal to sign (>=) instead of greater than sign (>) can result in a logic error.  Python will not evaluate a condition as you intended. However, the code is valid, so it will run without an error message. 
+
+The following example outputs a message related to whether or not a user has reached a maximum number of five login attempts. The condition in the if statement should be login_attempts > 5, but it is written as login_attempts >= 5.  A value of 5 has been assigned to login_attempts so that you can explore what it outputs in that instance:
+
+12345
+login_attempts = 5
+if login_attempts >= 5:
+    print("User has not reached maximum number of login attempts.")
+else:
+    print("User has reached maximum number of login attempts.")
+Reset
+User has not reached maximum number of login attempts.
+The output displays the message "User has not reached maximum number of login attempts." However, this is not true since the maximum number of login attempts is five. This is a logic error.
+
+Logic errors can also result when you assign the wrong value in a condition or when a mistake with indentation means that a line of code executes in a way that was not planned.
+
+Exceptions
+An exception is an error that involves code that cannot be executed even though it is syntactically correct. This happens for a variety of reasons.
+
+One common cause of an exception is when the code includes a variable that hasn't been assigned or a function that hasn't been defined. In this case, your output will include "NameError" to indicate that this is a name error. After you run the following code, use the error message to determine which variable was not assigned:
+
+12345678
+username = "elarson"
+month = "March"
+total_logins = 75
+failed_logins = 18
+print("Login report for", username, "in", month)
+print("Total logins:", total_logins)
+print("Failed logins:", failed_logins)
+print("Unusual logins:", unusual_logins)
+Reset
+Error on line 8:
+    print("Unusual logins:", unusual_logins)
+NameError: name 'unusual_logins' is not defined
+The output indicates there is a "NameError" involving the unusual_logins variable. You can fix this by assigning this variable a value.
+
+In addition to name errors, the following messages are output for other types of exceptions:
+
+"IndexError": An index error occurs when you place an index in bracket notation that does not exist in the sequence being referenced. For example, in the list usernames = ["bmoreno", "tshah", "elarson"], the indices are 0, 1, and 2. If you referenced this list with the statement print(usernames[3]), this would result in an index error.
+
+"TypeError": A type error results from using the wrong data type. For example, if you tried to perform a mathematical calculation by adding a string value to an integer, you would get a type error.
+
+"FileNotFound": A file not found error occurs when you try to open a file that does not exist in the specified location.
+
+Debugging strategies  
+Keep in mind that if you have multiple errors, the Python interpreter will output error messages one at a time, starting with the first error it encounters. After you fix that error and run the code again, the interpreter will output another message for the next syntax error or exception it encounters.
+
+When dealing with syntax errors, the error messages you receive in the output will generally help you fix the error. However, with logic errors and exceptions, additional strategies may be needed.
+
+Debuggers 
+In this course, you have been running code in a notebook environment. However, you may write Python code in an Integrated Development Environment (IDE). An Integrated Development Environment (IDE) is a software application for writing code that provides editing assistance and error correction tools. Many IDEs offer error detection tools in the form of a debugger. A debugger is a software tool that helps to locate the source of an error and assess its causes.
+
+In cases when you can't find the line of code that is causing the issue, debuggers help you narrow down the source of the error in your program. They do this by working with  breakpoints. Breakpoints are markers placed on certain lines of executable code that indicate which sections of code should run when debugging.
+
+Some debuggers also have a feature that allows you to check the values stored in variables as they change throughout your code. This is especially helpful for logic errors so that you can locate where variable values have unintentionally changed. 
+
+Use print statements 
+Another debugging strategy is to incorporate temporary print statements that are designed to identify the source of the error. You should strategically incorporate these print statements to print at various locations in the code. You can specify line numbers as well as descriptive text about the location. 
+
+For example, you may have code that is intended to add new users to an approved list and then display the approved list. The code should not add users that are already on the approved list. If you analyze the output of this code after you run it, you will realize that there is a logic error:
+
+123456789
+new_users = ["sgilmore", "bmoreno"]
+approved_users = ["bmoreno", "tshah", "elarson"]
+def add_users():
+    for user in new_users:
+        if user in approved_users:
+            print(user,"already in list")
+        approved_users.append(user)
+add_users()
+print(approved_users)
+Reset
+bmoreno already in list
+['bmoreno', 'tshah', 'elarson', 'sgilmore', 'bmoreno']
+Even though you get the message "bmoreno already in list", a second instance of "bmoreno" is added to the list. In the following code, print statements have been added to the code. When you run it, you can examine what prints:
+
+123456789101112
+new_users = ["sgilmore", "bmoreno"]
+approved_users = ["bmoreno", "tshah", "elarson"]
+def add_users():
+    for user in new_users:
+        print("line 5 - inside for loop")
+        if user in approved_users:
+            print("line 7 - inside if statement")
+            print(user,"already in list")
+        print("line 9 - before .append method")
+        approved_users.append(user)
+
+Reset
+line 5 - inside for loop
+line 9 - before .append method
+line 5 - inside for loop
+line 7 - inside if statement
+bmoreno already in list
+line 9 - before .append method
+['bmoreno', 'tshah', 'elarson', 'sgilmore', 'bmoreno']
+The print statement "line 5 - inside for loop" outputs twice, indicating that Python has entered the for loop for each username in new_users. This is as expected. Additionally, the print statement "line 7 - inside if statement" only outputs once, and this is also as expected because only one of these usernames was already in approved_users.
+
+However, the print statement "line 9 - before .append method" outputs twice. This means the code calls the .append() method for both usernames even though one is already in approved_users. This helps isolate the logic error to this area. This can help you realize that the line of code approved_users.append(user) should be the body of an else statement so that it only executes when user is not in approved_users.
+
+
+
+
+
+Glossary terms from week 4
+Terms and definitions from Course 7, Week 4
+Automation: The use of technology to reduce human and manual effort to perform common and repetitive tasks
+
+Conditional statement: A statement that evaluates code to determine if it meets a specified set of conditions
+
+Debugger: A software tool that helps to locate the source of an error and assess its causes
+
+Debugging: The practice of identifying and fixing errors in code
+
+Exception: An error that involves code that cannot be executed even though it is syntactically correct
+
+File path: The location of a file or directory 
+
+Function: A section of code that can be reused in a program
+
+Integrated development environment (IDE): A software application for writing code that provides editing assistance and error correction tools
+
+Iterative statement: Code that repeatedly executes a set of instructions
+
+Log: A record of events that occur within an organization's systems 
+
+Logic error: An error that results when the logic used in code produces unintended results
+
+Parsing: The process of converting data into a more readable format
+
+Syntax error: An error that involves invalid usage of a programming language
+
+Variable: A container that stores data
+
+
+
+
+

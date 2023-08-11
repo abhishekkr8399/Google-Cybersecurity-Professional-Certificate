@@ -1,0 +1,756 @@
+SQL filtering versus Linux filtering
+Previously, you explored the Linux commands that allow you to filter for specific information contained within files or directories. And, more recently, you examined how SQL helps you efficiently filter for the information you need. In this reading, you'll explore differences between the two tools as they relate to filtering. You'll also learn that one way to access SQL is through the Linux command line.
+
+Accessing SQL
+There are many interfaces for accessing SQL and many different versions of SQL. One way to access SQL is through the Linux command line.
+
+To access SQL from Linux, you need to type in a command for the version of SQL that you want to use. For example, if you want to access SQLite, you can enter the command sqlite3 in the command line.
+
+After this, any commands typed in the command line will be directed to SQL instead of Linux commands.
+
+Differences between Linux and SQL filtering 
+Although both Linux and SQL allow you to filter through data, there are some differences that affect which one you should choose.
+
+Structure
+SQL offers a lot more structure than Linux, which is more free-form and not as tidy.
+
+For example, if you wanted to access a log of employee log-in attempts, SQL would have each record separated into columns. Linux would print the data as a line of text without this organization. As a result, selecting a specific column to analyze would be easier and more efficient in SQL.
+
+In terms of structure, SQL provides results that are more easily readable and that can be adjusted more quickly than when using Linux.
+
+Joining tables
+Some security-related decisions require information from different tables. SQL allows the analyst to join multiple tables together when returning data. Linux doesn’t have that same functionality; it doesn’t allow data to be connected to other information on your computer. This is more restrictive for an analyst going through security logs.
+
+Best uses
+As a security analyst, it’s important to understand when you can use which tool. Although SQL has a more organized structure and allows you to join tables, this doesn’t mean that there aren’t situations that would require you to filter data in Linux.
+
+A lot of data used in cybersecurity will be stored in a database format that works with SQL. However, other logs might be in a format that is not compatible with SQL. For instance, if the data is stored in a text file, you cannot search through it with SQL. In those cases, it is useful to know how to filter in Linux. 
+
+
+
+
+
+Query a database
+Previously, you explored how SQL is an important tool in the world of cybersecurity and is essential when querying databases. You examined a few basic SQL queries and keywords used to extract needed information from a database. In this reading, you’ll review those basic SQL queries and learn a new keyword that will help you organize your output. You'll also learn about the Chinook database, which this course uses for queries in readings and quizzes.
+
+Basic SQL query
+There are two essential keywords in any SQL query: SELECT and FROM. You will use these keywords every time you want to query a SQL database. Using them together helps SQL identify what data you need from a database and the table you are returning it from.
+
+The video demonstrated this SQL query:
+
+SELECT employee_id, device_id
+
+FROM employees;
+
+In readings and quizzes, this course uses a sample database called the Chinook database to run queries. The Chinook database includes data that might be created at a digital media company. A security analyst employed by this company might need to query this data.  For example, the database contains eleven tables, including an employees table, a customers table, and an invoices table. These tables include data such as names and addresses.  
+
+As an example, you can run this query to return data from the customers table of the Chinook database:
+
+12
+SELECT customerid, city, country
+FROM customers;
+Reset
++------------+---------------------+----------------+
+| CustomerId | City                | Country        |
++------------+---------------------+----------------+
+|          1 | São José dos Campos | Brazil         |
+|          2 | Stuttgart           | Germany        |
+|          3 | Montréal            | Canada         |
+|          4 | Oslo                | Norway         |
+|          5 | Prague              | Czech Republic |
+|          6 | Prague              | Czech Republic |
+|          7 | Vienne              | Austria        |
+|          8 | Brussels            | Belgium        |
+|          9 | Copenhagen          | Denmark        |
+|         10 | São Paulo           | Brazil         |
+|         11 | São Paulo           | Brazil         |
+|         12 | Rio de Janeiro      | Brazil         |
+|         13 | Brasília            | Brazil         |
+|         14 | Edmonton            | Canada         |
+|         15 | Vancouver           | Canada         |
+|         16 | Mountain View       | USA            |
+|         17 | Redmond             | USA            |
+|         18 | New York            | USA            |
+|         19 | Cupertino           | USA            |
+|         20 | Mountain View       | USA            |
+|         21 | Reno                | USA            |
+|         22 | Orlando             | USA            |
+|         23 | Boston              | USA            |
+|         24 | Chicago             | USA            |
+|         25 | Madison             | USA            |
++------------+---------------------+----------------+
+(Output limit exceeded, 25 of 59 total rows shown)
+SELECT
+The SELECT keyword indicates which columns to return. For example, you can return the customerid column from the Chinook database with
+
+SELECT customerid
+
+You can also select multiple columns by separating them with a comma. For example, if you want to return both the customerid and city columns, you should write SELECT customerid, city.
+
+If you want to return all columns in a table, you can follow the SELECT keyword with an asterisk (*). The first line in the query will be SELECT *.
+
+Note: Although the tables you're querying in this course are relatively small, using SELECT * may not be advisable when working with large databases and tables; in those cases, the final output may be difficult to understand and might be slow to run. 
+
+FROM
+The SELECT keyword always comes with the FROM keyword. FROM indicates which table to query. To use the FROM keyword, you should write it after the SELECT keyword, often on a new line, and follow it with the name of the table you’re querying. If you want to return all columns from the customers table, you can write:
+
+SELECT *
+
+FROM customers;
+
+When you want to end the query here, you put a semicolon (;) at the end to tell SQL that this is the entire query.
+
+Note: Line breaks are not necessary in SQL queries, but are often used to make the query easier to understand. If you prefer, you can also write the previous query on one line as
+
+SELECT * FROM customers;
+
+ORDER BY
+Database tables are often very complicated, and this is where other SQL keywords come in handy. ORDER BY is an important keyword for organizing the data you extract from a table.
+
+ORDER BY sequences the records returned by a query based on a specified column or columns. This can be in either ascending or descending order.
+
+Sorting in ascending order
+To use the ORDER BY keyword, write it at the end of the query and specify a column to base the sort on. In this example, SQL will return the customerid, city, and country columns from the customers table, and the records will be sequenced by the city column:
+
+123
+SELECT customerid, city, country
+FROM customers
+ORDER BY city;
+Reset
++------------+--------------+----------------+
+| CustomerId | City         | Country        |
++------------+--------------+----------------+
+|         48 | Amsterdam    | Netherlands    |
+|         59 | Bangalore    | India          |
+|         36 | Berlin       | Germany        |
+|         38 | Berlin       | Germany        |
+|         42 | Bordeaux     | France         |
+|         23 | Boston       | USA            |
+|         13 | Brasília     | Brazil         |
+|          8 | Brussels     | Belgium        |
+|         45 | Budapest     | Hungary        |
+|         56 | Buenos Aires | Argentina      |
+|         24 | Chicago      | USA            |
+|          9 | Copenhagen   | Denmark        |
+|         19 | Cupertino    | USA            |
+|         58 | Delhi        | India          |
+|         43 | Dijon        | France         |
+|         46 | Dublin       | Ireland        |
+|         54 | Edinburgh    | United Kingdom |
+|         14 | Edmonton     | Canada         |
+|         26 | Fort Worth   | USA            |
+|         37 | Frankfurt    | Germany        |
+|         31 | Halifax      | Canada         |
+|         44 | Helsinki     | Finland        |
+|         34 | Lisbon       | Portugal       |
+|         52 | London       | United Kingdom |
+|         53 | London       | United Kingdom |
++------------+--------------+----------------+
+(Output limit exceeded, 25 of 59 total rows shown)
+The ORDER BY keyword sorts the records based on the column specified after this keyword. By default, as shown in this example, the sequence will be in ascending order. This means
+
+if you choose a column containing numeric data, it sorts the output from the smallest to largest. For example, if sorting on customerid, the ID numbers are sorted from smallest to largest.
+
+if the column contains alphabetic characters, such as in the example with the city column, it orders the records from the beginning of the alphabet to the end. 
+
+Sorting in descending order
+You can also use the ORDER BY with the DESC keyword to sort in descending order. The DESC keyword is short for "descending" and tells SQL to sort numbers from largest to smallest, or alphabetically from Z to A. This can be done by following ORDER BY with the DESC keyword. For example, you can run this query to examine how the results differ when DESC is applied: 
+
+123
+SELECT customerid, city, country
+FROM customers
+ORDER BY city DESC;
+Reset
++------------+---------------------+----------------+
+| CustomerId | City                | Country        |
++------------+---------------------+----------------+
+|         33 | Yellowknife         | Canada         |
+|         32 | Winnipeg            | Canada         |
+|         49 | Warsaw              | Poland         |
+|          7 | Vienne              | Austria        |
+|         15 | Vancouver           | Canada         |
+|         27 | Tucson              | USA            |
+|         29 | Toronto             | Canada         |
+|         10 | São Paulo           | Brazil         |
+|         11 | São Paulo           | Brazil         |
+|          1 | São José dos Campos | Brazil         |
+|          2 | Stuttgart           | Germany        |
+|         51 | Stockholm           | Sweden         |
+|         55 | Sidney              | Australia      |
+|         57 | Santiago            | Chile          |
+|         28 | Salt Lake City      | USA            |
+|         47 | Rome                | Italy          |
+|         12 | Rio de Janeiro      | Brazil         |
+|         21 | Reno                | USA            |
+|         17 | Redmond             | USA            |
+|          5 | Prague              | Czech Republic |
+|          6 | Prague              | Czech Republic |
+|         35 | Porto               | Portugal       |
+|         39 | Paris               | France         |
+|         40 | Paris               | France         |
+|         30 | Ottawa              | Canada         |
++------------+---------------------+----------------+
+(Output limit exceeded, 25 of 59 total rows shown)
+Now, cities at the end of the alphabet are listed first.
+
+Sorting based on multiple columns
+You can also choose multiple columns to order by. For example, you might first choose the country and then the city column. SQL then sorts the output by country, and for rows with the same country, it sorts them based on city. You can run this to explore how SQL displays this:
+
+123
+SELECT customerid, city, country
+FROM customers
+ORDER BY country, city;
+Reset
++------------+---------------------+----------------+
+| CustomerId | City                | Country        |
++------------+---------------------+----------------+
+|         56 | Buenos Aires        | Argentina      |
+|         55 | Sidney              | Australia      |
+|          7 | Vienne              | Austria        |
+|          8 | Brussels            | Belgium        |
+|         13 | Brasília            | Brazil         |
+|         12 | Rio de Janeiro      | Brazil         |
+|          1 | São José dos Campos | Brazil         |
+|         10 | São Paulo           | Brazil         |
+|         11 | São Paulo           | Brazil         |
+|         14 | Edmonton            | Canada         |
+|         31 | Halifax             | Canada         |
+|          3 | Montréal            | Canada         |
+|         30 | Ottawa              | Canada         |
+|         29 | Toronto             | Canada         |
+|         15 | Vancouver           | Canada         |
+|         32 | Winnipeg            | Canada         |
+|         33 | Yellowknife         | Canada         |
+|         57 | Santiago            | Chile          |
+|          5 | Prague              | Czech Republic |
+|          6 | Prague              | Czech Republic |
+|          9 | Copenhagen          | Denmark        |
+|         44 | Helsinki            | Finland        |
+|         42 | Bordeaux            | France         |
+|         43 | Dijon               | France         |
+|         41 | Lyon                | France         |
++------------+---------------------+----------------+
+(Output limit exceeded, 25 of 59 total rows shown)
+
+
+
+
+
+The WHERE clause and basic operators
+Previously, you focused on how to refine your SQL queries by using the WHERE clause to filter results. In this reading, you’ll further explore how to use the WHERE clause, the LIKE operator and the percentage sign (%) wildcard. You’ll also be introduced to the underscore (_), another wildcard that can help you filter queries.
+
+How filtering helps
+As a security analyst, you'll often be responsible for working with very large and complicated security logs. To find the information you need, you'll often need to use SQL to filter the logs.
+
+In a cybersecurity context, you might use filters to find the login attempts of a specific user or all login attempts made at the time of a security issue. As another example, you might filter to find the devices that are running a specific version of an application.
+
+WHERE 
+To create a filter in SQL, you need to use the keyword WHERE. WHERE indicates the condition for a filter.
+
+If you needed to email employees with a title of IT Staff, you might use a query like the one in the following example. You can run this example to examine what it returns: 
+
+123
+SELECT firstname, lastname, title, email
+FROM employees
+WHERE title = 'IT Staff';
+Reset
+Rather than returning all records in the employees table, this WHERE clause instructs SQL to return only those that contain 'IT Staff' in the title column. It uses the equals sign (=) operator to set this condition.
+
+Note: You should place the semicolon (;) where the query ends. When you add a filter to a basic query, the semicolon is after the filter. 
+
+Filtering for patterns
+You can also filter based on a pattern. For example, you can identify entries that start or end with a certain character or characters. Filtering for a pattern requires incorporating two more elements into your WHERE clause:
+
+a wildcard 
+
+the LIKE operator
+
+Wildcards
+A wildcard is a special character that can be substituted with any other character. Two of the most useful wildcards are the percentage sign (%) and the underscore (_):
+
+The percentage sign substitutes for any number of other characters. 
+
+The underscore symbol only substitutes for one other character.
+
+These wildcards can be placed after a string, before a string, or in both locations depending on the pattern you’re filtering for.
+
+The following table includes these wildcards applied to the string 'a' and examples of what each pattern would return.
+
+Pattern
+
+Results that could be returned
+
+'a%'
+
+apple123, art, a
+
+'a_'
+
+as, an, a7
+
+'a__' 
+
+ant, add, a1c
+
+'%a'
+
+pizza, Z6ra, a
+
+'_a'
+
+ma, 1a, Ha
+
+'%a%'
+
+Again, back, a
+
+'_a_'
+
+Car, ban, ea7
+
+LIKE
+To apply wildcards to the filter, you need to use the LIKE operator instead of an equals sign (=). LIKE is used with WHERE to search for a pattern in a column. 
+
+For instance, if you want to email employees with a title of either 'IT Staff' or 'IT Manager', you can use LIKE operator combined with the % wildcard:  
+
+123
+SELECT lastname, firstname, title, email
+FROM employees
+WHERE title LIKE 'IT%';
+Reset
+This query returns all records with values in the title column that start with the pattern of 'IT'. This means both 'IT Staff' and 'IT Manager' are returned.
+
+As another example, if you want to search through the invoices table to find all customers located in states with an abbreviation of 'NY', 'NV', 'NS' or 'NT', you can use the 'N_' pattern on the state column:
+
+123
+SELECT firstname,lastname, state, country
+FROM customers
+WHERE state LIKE 'N_';
+Reset
+This returns all the records with state abbreviations that follow this pattern.
+
+
+
+
+
+The WHERE clause and basic operators
+Previously, you focused on how to refine your SQL queries by using the WHERE clause to filter results. In this reading, you’ll further explore how to use the WHERE clause, the LIKE operator and the percentage sign (%) wildcard. You’ll also be introduced to the underscore (_), another wildcard that can help you filter queries.
+
+How filtering helps
+As a security analyst, you'll often be responsible for working with very large and complicated security logs. To find the information you need, you'll often need to use SQL to filter the logs.
+
+In a cybersecurity context, you might use filters to find the login attempts of a specific user or all login attempts made at the time of a security issue. As another example, you might filter to find the devices that are running a specific version of an application.
+
+WHERE 
+To create a filter in SQL, you need to use the keyword WHERE. WHERE indicates the condition for a filter.
+
+If you needed to email employees with a title of IT Staff, you might use a query like the one in the following example. You can run this example to examine what it returns: 
+
+123
+SELECT firstname, lastname, title, email
+FROM employees
+WHERE title = 'IT Staff';
+Reset
+Rather than returning all records in the employees table, this WHERE clause instructs SQL to return only those that contain 'IT Staff' in the title column. It uses the equals sign (=) operator to set this condition.
+
+Note: You should place the semicolon (;) where the query ends. When you add a filter to a basic query, the semicolon is after the filter. 
+
+Filtering for patterns
+You can also filter based on a pattern. For example, you can identify entries that start or end with a certain character or characters. Filtering for a pattern requires incorporating two more elements into your WHERE clause:
+
+a wildcard 
+
+the LIKE operator
+
+Wildcards
+A wildcard is a special character that can be substituted with any other character. Two of the most useful wildcards are the percentage sign (%) and the underscore (_):
+
+The percentage sign substitutes for any number of other characters. 
+
+The underscore symbol only substitutes for one other character.
+
+These wildcards can be placed after a string, before a string, or in both locations depending on the pattern you’re filtering for.
+
+The following table includes these wildcards applied to the string 'a' and examples of what each pattern would return.
+
+Pattern
+
+Results that could be returned
+
+'a%'
+
+apple123, art, a
+
+'a_'
+
+as, an, a7
+
+'a__' 
+
+ant, add, a1c
+
+'%a'
+
+pizza, Z6ra, a
+
+'_a'
+
+ma, 1a, Ha
+
+'%a%'
+
+Again, back, a
+
+'_a_'
+
+Car, ban, ea7
+
+LIKE
+To apply wildcards to the filter, you need to use the LIKE operator instead of an equals sign (=). LIKE is used with WHERE to search for a pattern in a column. 
+
+For instance, if you want to email employees with a title of either 'IT Staff' or 'IT Manager', you can use LIKE operator combined with the % wildcard:  
+
+123
+SELECT lastname, firstname, title, email
+FROM employees
+WHERE title LIKE 'IT%';
+Reset
+This query returns all records with values in the title column that start with the pattern of 'IT'. This means both 'IT Staff' and 'IT Manager' are returned.
+
+As another example, if you want to search through the invoices table to find all customers located in states with an abbreviation of 'NY', 'NV', 'NS' or 'NT', you can use the 'N_' pattern on the state column:
+
+SELECT firstname,lastname, state, country
+FROM customers
+WHERE state LIKE 'N_';
+
+
+
+Operators for filtering dates and numbers
+Previously, you examined operators like less than (<) or greater than (>) and explored how they can be used in filtering numeric and date and time data types. This reading summarizes what you learned and provides new examples of using operators in filters.
+
+Numbers, dates, and times in cybersecurity
+Security analysts work with more than just string data, or data consisting of an ordered sequence of characters. 
+
+They also frequently work with numeric data, or data consisting of numbers. A few examples of numeric data that you might encounter in your work as a security analyst include:
+
+the number of login attempts
+
+the count of a specific type of log entry
+
+the volume of data being sent from a source
+
+the volume of data being sent to a destination
+
+You'll also encounter date and time data, or data representing a date and/or time. As a first example, logs will generally timestamp every record. Other time and date data might include:
+
+login dates
+
+login times
+
+dates for patches 
+
+the duration of a connection
+
+Comparison operators
+In SQL, filtering numeric and date and time data often involves operators. You can use the following operators in your filters to make sure you return only the rows you need:
+
+operator
+
+use
+
+<
+
+less than
+
+>
+
+greater than
+
+=
+
+equal to
+
+<=
+
+less than or equal to
+
+>=
+
+greater than or equal to
+
+<>
+
+not equal to
+
+Note: You can also use != as an alternative operator for not equal to.
+
+Incorporating operators into filters
+These comparison operators are used in the WHERE clause at the end of a query. The following query uses the > operator to filter the birthdate column. You can run this query to explore its output:
+
+123
+SELECT firstname, lastname, birthdate
+FROM employees
+WHERE birthdate > '1970-01-01';
+Reset
+This query returns the first and last names of employees born after, but not on, '1970-01-01' (or January 1, 1970). If you were to use the >= operator instead, the results would also include results on exactly '1970-01-01'.
+
+In other words, the > operator is exclusive and the >= operator is inclusive.  An exclusive operator is an operator that does not include the value of comparison. An inclusive operator is an operator that includes the value of comparison. 
+
+BETWEEN
+Another operator used for numeric data as well as date and time data is the BETWEEN operator. BETWEEN filters for numbers or dates within a range. For example, if you want to find the first and last names of all employees hired between January 1, 2002 and January 1, 2003, you can use the BETWEEN operator as follows:
+
+123
+SELECT firstname, lastname, hiredate
+FROM employees
+WHERE hiredate BETWEEN '2002-01-01' AND '2003-01-01';
+Reset
+
+Note: The BETWEEN operator is inclusive. This means records with a hiredate of January 1, 2002 or January 1, 2003 are included in the results of the previous query.
+
+
+
+
+
+More on filters with AND, OR, and NOT
+Previously, you explored how to add filters containing the AND, OR, and NOT operators to your SQL queries. In this reading, you'll continue to explore how these operators can help you refine your queries.
+
+Logical operators
+AND, OR, and NOT allow you to filter your queries to return the specific information that will help you in your work as a security analyst. They are all considered logical operators.
+
+AND 
+First, AND is used to filter on two conditions. AND specifies that both conditions must be met simultaneously. 
+
+As an example, a cybersecurity concern might affect only those customer accounts that meet both the condition of being handled by a support representative with an ID of 5 and the condition of being located in the USA. To find the names and emails of those specific customers, you should place the two conditions on either side of the AND operator in the WHERE clause:
+
+123
+SELECT firstname, lastname, email, country, supportrepid
+FROM customers
+WHERE supportrepid = 5 AND country = 'USA';
+Reset
+Running this query returns four rows of information about the customers. You can use this information to contact them about the security concern.
+
+OR 
+The OR operator also connects two conditions, but OR specifies that either condition can be met. It returns results where the first condition, the second condition, or both are met.
+
+For example, if you are responsible for finding all customers who are either in the USA or Canada so that you can communicate information about a security update, you can use an OR operator to find all the needed records. As the following query demonstrates, you should place the two conditions on either side of the OR operator in the WHERE clause:
+
+123
+SELECT firstname, lastname, email, country
+FROM customers
+WHERE country = 'Canada' OR country = 'USA';
+Reset
+The query returns all customers in either the US or Canada.
+
+Note: Even if both conditions are based on the same column, you need to write out both full conditions. For instance, the query in the previous example contains the filter WHERE country = 'Canada' OR country = 'USA'. 
+
+NOT 
+Unlike the previous two operators, the NOT operator only works on a single condition, and not on multiple ones. The NOT operator negates a condition. This means that SQL returns all records that don’t match the condition specified in the query. 
+
+For example, if a cybersecurity issue doesn't affect customers in the USA but might affect those in other countries, you can return all customers who are not in the USA. This would be more efficient than creating individual conditions for all of the other countries. To use the NOT operator for this task, write the following query and place NOT directly after WHERE:
+
+123
+SELECT firstname, lastname, email, country
+FROM customers
+WHERE NOT country = 'USA';
+Reset
+SQL returns every entry where the customers are not from the USA.
+
+Pro tip: Another way of finding values that are not equal to a certain value is by using the <> operator or the != operator. For example, WHERE country <> 'USA' and WHERE country != 'USA' are the same filters as WHERE NOT country = 'USA'. 
+
+Combining logical operators
+Logical operators can be combined in filters. For example, if you know that both the USA and Canada are not affected by a cybersecurity issue, you can combine operators to return customers in all countries besides these two. In the following query, NOT is placed before the first condition, it's joined to a second condition with AND, and then NOT is also placed before that second condition. You can run it to explore what it returns:
+
+123
+SELECT firstname, lastname, email, country
+FROM customers
+WHERE NOT country = 'Canada' AND NOT country = 'USA';
+Reset
+
+
+
+
+
+Compare types of joins
+Previously, you explored SQL joins and how to use them to join data from multiple tables when these tables share a common column. You also examined how there are different types of joins, and each of them returns different rows from the tables being joined. In this reading, you'll review these concepts and more closely analyze the syntax needed for each type of join.
+
+Inner joins
+The first type of join that you might perform is an inner join. INNER JOIN returns rows matching on a specified column that exists in more than one table.
+
+Venn diagram with two circles labeled "left table" and "right table". The intersection is highlighted.
+It only returns the rows where there is a match, but like other types of joins, it returns all specified columns from all joined tables. For example, if the query joins two tables with SELECT *, all columns in both of the tables are returned.
+
+Note: If a column exists in both of the tables, it is returned twice when SELECT * is used.
+
+The syntax of an inner join
+To write a query using INNER JOIN, you can use the following syntax:
+
+SELECT *
+
+FROM employees
+
+INNER JOIN machines ON employees.device_id = machines.device_id;
+
+You must specify the two tables to join by including the first or left table after FROM and the second or right table after INNER JOIN.
+
+After the name of the right table, use the ON keyword and the = operator to indicate the column you are joining the tables on. It's important that you specify both the table and column names in this portion of the join by placing a period (.) between the table and the column.  
+
+In addition to selecting all columns, you can select only certain columns.  For example, if you only want the join to return the username, operating_system and device_id columns, you can write this query:
+
+SELECT username, operating_system, employees.device_id
+
+FROM  employees
+
+INNER JOIN machines ON employees.device_id = machines.device_id;
+
+Note: In the example query, username and operating_system only appear in one of the two tables, so they are written with just the column name. On the other hand, because device_id appears in both tables, it's necessary to indicate which one to return by specifying both the table and column name (employees.device_id).
+
+Outer joins
+Outer joins expand what is returned from a join. Each type of outer join returns all rows from either one table or both tables.
+
+Left joins
+When joining two tables, LEFT JOIN returns all the records of the first table, but only returns rows of the second table that match on a specified column. 
+
+Venn diagram with two circles labeled "left table" and "right table". The left circle and the intersection are highlighted.
+The syntax for using LEFT JOIN is demonstrated in the following query:
+
+SELECT *
+
+FROM employees
+
+LEFT JOIN machines ON employees.device_id = machines.device_id;
+
+As with all joins, you should specify the first or left table as the table that comes after FROM and the second or right table as the table that comes after LEFT JOIN. In the example query, because employees is the left table, all of its records are returned. Only records that match on the device_id column are returned from the right table, machines. 
+
+Right joins
+When joining two tables, RIGHT JOIN returns all of the records of the second table, but only returns rows from the first table that match on a specified column. 
+
+Venn diagram with two circles labeled "left table" and "right table". The right circle and the intersection are highlighted.
+The following query demonstrates the syntax for RIGHT JOIN:
+
+SELECT *
+
+FROM employees
+
+RIGHT JOIN machines ON employees.device_id = machines.device_id;
+
+RIGHT JOIN has the same syntax as LEFT JOIN, with the only difference being the keyword RIGHT JOIN instructs SQL to produce different output. The query returns all records from machines, which is the second or right table. Only matching records are returned from employees, which is the first or left table.
+
+Note:  You can use LEFT JOIN and RIGHT JOIN and return the exact same results if you use the tables in reverse order. The following RIGHT JOIN query returns the exact same result as the LEFT JOIN query demonstrated in the previous section:
+
+SELECT *
+
+FROM machines
+
+RIGHT JOIN employees ON employees.device_id = machines.device_id;
+
+All that you have to do is switch the order of the tables that appear before and after the keyword used for the join, and you will have swapped the left and right tables.
+
+Full outer joins 
+FULL OUTER JOIN returns all records from both tables. You can think of it as a way of completely merging two tables.
+
+Venn diagram with two circles labeled "left table" and "right table". Both circles are highlighted.
+You can review the syntax for using FULL OUTER JOIN in the following query:
+
+SELECT *
+
+FROM employees
+
+FULL OUTER JOIN machines ON employees.device_id = machines.device_id;
+
+The results of a FULL OUTER JOIN query include all records from both tables. Similar to INNER JOIN, the order of tables does not change the results of the query.
+
+
+
+
+
+Continuous learning in SQL
+You've explored a lot about SQL, including applying filters to SQL queries and joining multiple tables together in a query.  There's still more that you can do with SQL. This reading will explore an example of something new you can add to your SQL toolbox: aggregate functions. You'll then focus on how you can continue learning about this and other SQL topics on your own.
+
+Aggregate functions
+In SQL, aggregate functions are functions that perform a calculation over multiple data points and return the result of the calculation. The actual data is not returned. 
+
+There are various aggregate functions that perform different calculations:
+
+COUNT returns a single number that represents the number of rows returned from your query.
+
+AVG returns a single number that represents the average of the numerical data in a column.
+
+SUM returns a single number that represents the sum of the numerical data in a column. 
+
+Aggregate function syntax
+To use an aggregate function, place the keyword for it after the SELECT keyword, and then in parentheses, indicate the column you want to perform the calculation on.
+
+For example, when working with the customers table, you can use aggregate functions to summarize important information about the table. If you want to find out how many customers there are in total, you can use the COUNT function on any column, and SQL will return the total number of records, excluding NULL values. You can run this query and explore its output:
+
+12
+SELECT COUNT(firstname)
+FROM customers;
+Reset
++------------------+
+| COUNT(firstname) |
++------------------+
+|               59 |
++------------------+
+The result is a table with one column titled COUNT(firstname) and one row that indicates the count. 
+
+If you want to find the number of customers from a specific country, you can add a filter to your query:
+
+123
+SELECT COUNT(firstname)
+FROM customers
+WHERE country = 'USA';
+Reset
++------------------+
+| COUNT(firstname) |
++------------------+
+|               13 |
++------------------+
+With this filter, the count is lower because it only includes the records where the country column contains a value of 'USA'.
+
+There are a lot of other aggregate functions in SQL. The syntax of placing them after SELECT is exactly the same as the COUNT function.
+
+Continuing to learn SQL
+SQL is a widely used querying language, with many more keywords and applications. You can continue to learn more about aggregate functions and other aspects of using SQL on your own.
+
+Most importantly, approach new tasks with curiosity and a willingness to find new ways to apply SQL to your work as a security analyst. Identify the data results that you need and try to use SQL to obtain these results.
+
+Fortunately, SQL is one of the most important tools for working with databases and analyzing data, so you'll find a lot of support in trying to learn SQL online. First, try searching for the concepts you've already learned and practiced to find resources that have accurate easy-to-follow explanations. When you identify these resources, you can use them to extend your knowledge.
+
+Continuing your practical experience with SQL is also important. You can also search for new databases that allow you to perform SQL queries using what you've learned.
+
+
+
+
+
+Terms and definitions from Course 4, Week 4
+Database: An organized collection of information or data
+
+Date and time data: Data representing a date and/or time
+
+Exclusive operator: An operator that does not include the value of comparison
+
+Filtering: Selecting data that match a certain condition
+
+Foreign key: A column in a table that is a primary key in another table 
+
+Inclusive operator: An operator that includes the value of comparison
+
+Log: A record of events that occur within an organization's systems
+
+Numeric data: Data consisting of numbers
+
+Operator: A symbol or keyword that represents an operation
+
+Primary key: A column where every row has a unique entry
+
+Query: A request for data from a database table or a combination of tables
+
+Relational database: A structured database containing tables that are related to each other
+
+String data: Data consisting of an ordered sequence of characters
+
+SQL (Structured Query Language): A programming language used to create, interact with, and request information from a database
+
+Syntax: The rules that determine what is correctly structured in a computing language
+
+Wildcard: A special character that can be substituted with any other character

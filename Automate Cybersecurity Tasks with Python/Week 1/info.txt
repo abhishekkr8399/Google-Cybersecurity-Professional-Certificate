@@ -1,0 +1,711 @@
+Get to know Python
+In this reading, you will explore how programming works, how a computer processes the Python programming language, and how Python is used in cybersecurity.
+
+How programming works 
+Programming is a process that can be used to create a specific set of instructions for a computer to execute tasks. Computer programs exist everywhere. Computers, cell phones, and many other electronic devices are all given instructions by computer programs. 
+
+There are multiple programming languages used to create computer programs. Python is one of these. Programming languages are converted to binary numbers, which are a series of 0s and 1s that represent the operations that the computer's central processing unit (CPU) should perform. Each instruction corresponds to a specific operation, such as adding two numbers or loading a value from memory. 
+
+It would be very time-consuming for humans to communicate this way. Programming languages like Python make it easier to write code because you can use less syntax when instructing computers to perform complex processes.
+
+Using Python to program
+Python is a general purpose programming language that can be used to solve a variety of problems. For example, it can be used to build websites, perform data analysis, and automate tasks. 
+
+Python code must be converted through an interpreter before the computer can process it. An interpreter is a computer program that translates Python code into runnable instructions line by line. 
+
+Python versions
+There are multiple versions of Python. In this course, you are using Python 3. While using Python, it's important to keep track of the version you're using. There are differences in the syntax of each version. Syntax refers to the rules that determine what is correctly structured in a computing language.
+
+Python in cybersecurity
+In cybersecurity, Python is used especially for automation. Automation is the use of technology to reduce human and manual effort to perform common and repetitive tasks. These are some specific areas of cybersecurity in which Python might be used to automate specific tasks:
+
+Log analysis
+
+Malware analysis
+
+Access control list management
+
+Intrusion detection
+
+Compliance checks
+
+Network scanning
+
+
+
+
+
+Python environments
+You can run Python through a variety of environments. These environments include notebooks, integrated development environments (IDEs), and the command line. This reading will introduce you to these environments. It will focus primarily on notebooks because this is how you'll interact with Python in this course.
+
+Notebooks
+One way to write Python code is through a notebook. In this course, you'll interact with Python through notebooks. A notebook is an online interface for writing, storing, and running code. They also allow you to document information about the code. Notebook content either appears in a code cell or markdown cell.
+
+Code cells
+Code cells are meant for writing and running code. A notebook provides a mechanism for running these code cells. Often, this is a play button located within the cell. When you run the code, its output appears after the code. 
+
+Markdown cells
+Markdown cells are meant for describing the code. They allow you to format text in the markdown language. Markdown language is used for formatting plain text in text editors and code editors. For example, you might indicate that text should be in a certain header style. 
+
+Common notebook environments
+Two common notebook environments are 
+Jupyter Notebook
+ and 
+Google Colaboratory
+ (or Google Colab). They allow you to run several programming languages, including Python. 
+
+Integrated development environments (IDEs)
+Another option for writing Python code is through an integrated development environment (IDE), or a software application for writing code that provides editing assistance and error correction tools. Integrated development environments include a graphical user interface (GUI) that provides programmers with a variety of options to customize and build their programs. 
+
+Command line
+The command line is another environment that allows you to run Python programs. Previously, you learned that a command-line interface (CLI) is a text-based user interface that uses commands to interact with the computer. By entering commands into the command line, you can access all files and directories saved on your hard drive, including files containing Python code you want to run. You can also use the command line to open a file editor and create a new Python file.
+
+
+
+
+
+More about data types
+Previously, you explored data types in Python. A data type is a category for a particular type of data item. You focused on string, list, float, integer, and Boolean data. These are the data types you'll work with in this course. This reading will expand on these data types. It will also introduce three additional types.
+
+String
+In Python, string data is data consisting of an ordered sequence of characters. Characters in a string may include letters, numbers, symbols, and spaces. These characters must be placed within quotation marks. These are all valid strings:
+
+"updates needed"
+
+"20%"
+
+"5.0"
+
+"35"
+
+"**/**/**" 
+
+""
+
+Note: The last item (""), which doesn't contain anything within the quotation marks, is called an empty string.
+
+You can use the print() function to display a string. You can explore this by running this code: 
+
+1
+print("updates needed")
+Reset
+The code prints "updates needed". 
+
+You can place strings in either double quotation marks ("") or single quotation marks (''). The following code demonstrates that the same message prints when the string is in single quotation marks:
+
+1
+print('updates needed') 
+Reset
+Note: Choosing one type of quotation marks and using it consistently makes it easier to read your code. This course uses double quotation marks.
+
+List
+In Python, list data is a data structure that consists of a collection of data in sequential form. Lists elements can be of any data type, such as strings, integers, Booleans, or even other lists. The elements of a list are placed within square brackets, and each element is separated by a comma. The following lists contains elements of various data types:
+
+[12, 36, 54, 1, 7]
+
+["eraab", "arusso", "drosas"]
+
+[True, False, True, True]
+
+[15, "approved", True, 45.5, False]
+
+[]
+
+Note: The last item [], which doesn't contain anything within the brackets, is called an empty list.
+
+You can also use the print() function to display a list:
+
+1
+print([12, 36, 54, 1, 7])
+Reset
+This displays a list containing the integers 12, 36, 54, 1, and 7.
+
+Integer
+In Python, integer data is data consisting of a number that does not include a decimal point. These are all examples of integer data:
+
+-100 
+
+-12
+
+-1
+
+0
+
+1
+
+20
+
+500 
+
+Integers are not placed in quotation marks. You can use the print() function to display an integer. When you run this code, it displays 5: 
+
+1
+print(5)
+Reset
+5
+You can also use the print() function to perform mathematical operations with integers. For example, this code adds two integers:
+
+1
+print(5 + 2)
+Reset
+7
+The result is 7. You can also subtract, multiply, or divide two integers.
+
+Float
+Float data is data consisting of a number with a decimal point. All of the following are examples of float data: 
+
+-2.2
+
+-1.34
+
+0.0
+
+0.34 
+
+Just like integer data, float data is not placed in quotation marks. In addition, you can also use the print() function to display float data or to perform mathematical calculations with float data. You can run the following code to review the result of this calculation:
+
+1
+print(1.2 + 2.8)
+Reset
+4.0
+The output is 4.0.
+
+Note: Dividing two integer values or two float values results in float output when you use the symbol /:
+
+12
+print(1/4)
+print(1.0/4.0)
+Reset
+0.25
+0.25
+The output of both calculations is the float value of .25.  
+
+If you want to return a whole number from a calculation, you must use the symbol // instead:
+
+12
+print(1//4)
+print(1.0//4.0)
+Reset
+0
+0.0
+It will round down to the nearest whole number. In the case of print(1//4), the output is the integer value of 0 because using this symbol rounds down the calculation from .25 to the nearest whole number. In the case of print(1.0//4.0), the output is the float value of 0.0 because it maintains the float data type of the values in the calculation while also rounding down to the nearest whole number.
+
+Boolean 
+Boolean data is data that can only be one of two values: either True or False.
+
+You should not place Boolean values in quotation marks. When you run the following code, it displays the Boolean value of True:
+
+1
+print(True)
+Reset
+True
+You can also return a Boolean value by comparing numbers. Because 9 is not greater than 10, this code evaluates to False:
+
+1
+print(9 > 10)
+Reset
+False
+Additional data types
+In this course, you will work with the string, list, integer, float and Boolean data types, but there are other data types. These additional data types include tuple data, dictionary data, and set data.
+
+Tuple
+Tuple data is a data structure that consists of a collection of data that cannot be changed. Like lists, tuples can contain elements of varying data types. 
+
+A difference between tuple data and list data is that it is possible to change the elements in a list, but it is not possible to change the elements in a tuple. This could be useful in a cybersecurity context. For example, if software identifiers are stored in a tuple to ensure that they will not be altered, this can provide assurance that an access control list will only block the intended software.
+
+The syntax of a tuple is also different from the syntax of a list. A tuple is placed in parentheses rather than brackets. These are all examples of the tuple data type:
+
+("wjaffrey", "arutley", "dkot")
+
+(46, 2, 13, 2, 8, 0, 0)
+
+(True, False, True, True)
+
+("wjaffrey", 13, True)
+
+Pro tip: Tuples are more memory efficient than lists, so they are useful when you are working with a large quantity of data.
+
+Dictionary
+Dictionary data is data that consists of one or more key-value pairs. Each key is mapped to a value. A colon (:) is placed between the key and value. Commas separate key-value pairs from other key-value pairs, and the dictionary is placed within curly brackets ({}). 
+
+Dictionaries are useful when you want to store and retrieve data in a predictable way. For example, the following dictionary maps a building name to a number. The building name is the value, and the number is the key. A colon is placed after the key.
+
+{ 1: "East",
+
+  2: "West",
+
+  3: "North",
+
+  4: "South" }
+
+Set
+In Python, set data is data that consists of an unordered collection of unique values. This means no two values in a set can be the same. 
+
+Elements in a set are always placed within curly brackets and are separated by a comma. These elements can be of any data type. This example of a set contains strings of usernames:
+
+{"jlanksy", "drosas", "nmason"}
+
+
+
+
+
+Assign and reassign variables in Python
+Previously, you've explored variables and how to assign and reassign them in Python. In this reading, you'll expand your understanding of these topics. You’ll also learn about the general practice of naming variables so that you can avoid syntax errors and improve code readability. 
+
+What are variables?
+In a programming language, a variable is a container that stores data. It's a named storage location in a computer's memory that can hold a value. It stores the data in a particular data type, such as integer, string, or Boolean. The value that is stored in a variable can change. 
+
+You can think of variables as boxes with labels on them. Even when you change the contents of a box, the label on the box itself remains the same. Similarly, when you change the value stored in a variable, the name of the variable remains the same. 
+
+Security analysts working in Python will use a variety of variables. Some examples include variables for login attempts, allow lists, and addresses.
+
+Working with variables
+In Python, it's important to know both how to assign variables and how to reassign them.
+
+Assigning and reassigning variables
+If you want to create a variable called username and assign it a value of "nzhao", place the variable to the left of the equals sign and its value to the right:
+
+# Assign 'username' 
+
+username = "nzhao"
+
+If you later reset this username to "zhao2", you still refer to that variable container as username. 
+
+# Reassign 'username' 
+
+username = "zhao2"
+
+Although the contents have changed from "nzhao" to "zhao2", the variable username remains the same. 
+
+Note: You must place "nzhao" and "zhao2" in quotation marks because they're strings. Python automatically assigns a variable its data type when it runs. For example, when the username variable contains the string "nzhao", it’s assigned a string data type.
+
+Assigning variables to variables
+Using a similar process, you can also assign variables to other variables. In the following example, the variable username is assigned to a new variable old_username: 
+
+# Assign a variable to another variable
+
+username = "nzhao"
+
+old_username = username
+
+Because username contains the string value of "nzhao" and old_username contains the value of username, old_username now contains a value of "nzhao".
+
+Putting it together
+The following code demonstrates how a username can be updated. The username variable is assigned an initial value, which is then stored in a second variable called old_username. After this, the username variable is reassigned a new value. You can run this code to get a message about the previous username and the current username:
+
+12345
+username = "nzhao"
+old_username = username
+username = "zhao2"
+print("Previous username:", old_username)
+print("Current username:", username)
+Reset
+Best practices for naming variables 
+You can name a variable almost anything you want, but there are a few guidelines you should follow to ensure correct syntax and prevent errors:
+
+Use only letters, numbers, and underscores in variable names. Valid examples: date_3, username, interval2
+
+Start a variable name with a letter or underscore. Do not start it with a number. Valid examples: time,  _login
+
+Remember that variable names in Python are case-sensitive. These are all different variables: time, Time, TIME, timE.
+
+Don't use Python’s built-in keywords or functions for variable names. For example, variables shouldn't be named True, False, or if.  
+
+Additionally, you should follow these stylistic guidelines to make your code easier for you and other security analysts to read and understand:
+
+Separate two or more words with underscores. Valid examples: login_attempts, invalid_user, status_update
+
+Avoid variables with similar names. These variables could be easily confused with one another: start_time, starting_time, time_starting.
+
+Avoid unnecessarily long names for variables. For instance, don't give variables names like variable_that_equals_3.
+
+Names should describe the data and not be random words. Valid examples: num_login_attempts, device_id, invalid_usernames
+
+Note: Using underscores to separate multiple words in variables is recommended, but another convention that you might encounter is capitalizing the first letter of each word except the first word. Example: loginAttempt
+
+
+
+
+
+More on conditionals in Python
+Previously, you explored conditional statements and how they’re useful in automating tasks in Python. So far, you’ve focused on the if and else keywords. In this reading, you’ll review these and learn another keyword, elif. You’ll also learn how you can apply the and, or, and not operators to your conditions.
+
+How conditional statements work
+A conditional statement is a statement that evaluates code to determine whether it meets a specific set of conditions. When a condition is met, it evaluates to a Boolean value of True and performs specified actions. When the condition isn’t met, it evaluates a Boolean value of False and doesn’t perform the specified actions. 
+
+In conditional statements, the condition is often based on a comparison of two values. This table summarizes common comparison operators used to compare numerical values.
+
+operator
+
+use
+
+>
+
+greater than
+
+<
+
+less than
+
+>=
+
+greater than or equal to
+
+<=
+
+less than or equal to
+
+==
+
+equal to
+
+!=
+
+not equal to
+
+Note: The equal to (==) and not equal to (!=) operators are also commonly used to compare string data.
+
+if statements
+The keyword if starts a conditional statement. It’s a necessary component of any conditional statement. In the following example, if begins a statement that tells Python to print an "OK" message when the HTTP response status code equals 200:
+
+if status == 200:
+
+    print("OK")
+
+This code consists of a header and a body.
+
+The header of an if statement
+The first line of this code is the header. In the header of an if statement, the keyword if is followed by the condition. Here, the condition is that the status variable is equal to a value of 200. The condition can be placed in parentheses:
+
+if (status == 200):
+
+    print("OK")
+
+In cases like this one, placing parentheses around conditions in Python is optional. You might want to include them if it helps you with code readability. However, this condition will be processed the same way if written without parentheses. 
+
+In other situations, because Python evaluates the conditions in parentheses first, parentheses can affect how Python processes conditions. You will read more about one of these in the section of this reading on not.
+
+Note: You must always place a colon (:) at the end of the header. Without this syntax, the code will produce an error.
+
+The body of an if statement
+
+After the header of an if statement comes the body of the if statement. This tells Python what action or actions to perform when the condition evaluates to True. In this example, there is just one action, printing "OK" to the screen. In other cases, there might be more lines of code with additional actions.
+
+Note: For the body of the if statement to execute as intended, it must be indented further than the header. Additionally, if there are multiple lines of code within the body, they must all be indented consistently. 
+
+Continuing conditionals with else and elif
+In the previous example, if the HTTP status response code was not equal to 200, the condition would evaluate to False and Python would continue with the rest of the program. However, it’s also possible to specify alternative actions with else and elif.
+
+else statements
+The keyword else precedes a code section that only evaluates when all conditions that precede it within the conditional statement evaluate to False.
+
+In the following example, when the HTTP response status code is not equal to 200, it prints an alternative message of "check other status":
+
+if status == 200:
+
+    print("OK")
+
+else:
+
+    print("check other status")
+
+Note: Like with if, a colon (:) is required after else, and the body that follows the else header is indented.
+
+elif statements
+In some cases, you might have multiple alternative actions that depend on new conditions. In that case, you can use elif. The elif keyword precedes a condition that is only evaluated when previous conditions evaluate to False. Unlike with else, there can be multiple elif statements following if.
+
+For example, you might want to print one message if the HTTP response status code is 200, one message if it is 400, and one if it is 500. The following code demonstrates how you can use elif for this: 
+
+if status == 200:
+
+    print("OK")
+
+elif status == 400:
+
+    print("Bad Request")
+
+elif status == 500:
+
+    print("Internal Server Error") 
+
+Python will first check if the value of status is 200, and if this evaluates to False, it will go onto the first elif statement. There, it will check whether the value of status is 400. If that evaluates to True, it will print "Bad Request", but if it evaluates to False, it will go on to the next elif statement. 
+
+If you want the code to print another message when all conditions evaluate to False, then you can incorporate else after the last elif. In this example, if it reaches the else statement, it prints a message to check the status:
+
+if status == 200:
+
+    print("OK")
+
+elif status == 400:
+
+    print("Bad Request")
+
+elif status == 500:
+
+    print("Internal Server Error")
+
+else:
+
+    print("check other status")
+
+Just like with if and else, it’s important to place a colon (:) after the elif header and indent the code that follows this header.
+
+Note: Python processes multiple elif statements differently than multiple if statements. When it reaches an elif statement that evaluates to True, it won’t check the following elif statements. On the other hand, Python will run all if statements.
+
+Logical operators for multiple conditions
+In some cases, you might want Python to perform an action based on a more complex condition. You might require two conditions to evaluate to True. Or, you might require only one of two conditions to evaluate to True. Or, you might want Python to perform an action when a condition evaluates to False. The operators and, or, and not can be used in these cases.
+
+and
+The and operator requires both conditions on either side of the operator to evaluate to True. For example, all HTTP status response codes between 200 and 226 relate to successful responses. You can use and to join a condition of being greater than or equal to 200 with another condition of being less than or equal to 226:
+
+if status >= 200 and status <= 226:
+
+    print("successful response")
+
+When both conditions are True, then the "successful response" message will print.
+
+or
+The or operator requires only one of the conditions on either side of the operator to evaluate to True. For example, both a status code of 100 and a status code of 102 are informational responses. Using or, you could ask Python to print an "informational response" message when the code is either 100 or 102:
+
+if status == 100 or status == 102:
+
+    print("informational response")
+
+Only one of these conditions needs to be met for Python to print the message.
+
+not
+The not operator negates a given condition so that it evaluates to False if the condition is True and to True if it is False. For example, if you want to indicate that Python should check the status code when it’s something outside of the successful range, you can use not:
+
+if not(status >= 200 and status <= 226):
+
+    print("check status")
+
+Python first checks whether the value of status is greater than or equal to 200 and less than or equal to 226, and then because of the operator not, it inverts this. This means it will print the message if status is less than 200 or greater than 226.
+
+Note: In this case, the parentheses are necessary for the code to apply not to both conditions. Python will evaluate the conditions within the parentheses first. This means it will first evaluate the conditions on either side of the and operator and then apply not to both of them.
+
+
+
+
+
+More on loops in Python
+Previously, you explored iterative statements. An iterative statement is code that repeatedly executes a set of instructions. Depending on the criteria, iterative statements execute zero or more times. We iterated through code using both for loops and while loops. In this reading, you’ll recap the syntax of loops. Then, you'll learn how to use the break and continue keywords to control the execution of loops. 
+
+for loops  
+If you need to iterate through a specified sequence, you should use a for loop. 
+
+The following for loop iterates through a sequence of usernames. You can run it to observe the output:
+
+12
+for i in ["elarson", "bmoreno", "tshah", "sgilmore"]:
+    print(i)
+Reset
+elarson
+bmoreno
+tshah
+sgilmore
+The first line of this code is the loop header. In the loop header, the keyword for signals the beginning of a for loop. Directly after for, the loop variable appears. The loop variable is a variable that is used to control the iterations of a loop. In for loops, the loop variable is part of the header. In this example, the loop variable is i. 
+
+The rest of the loop header indicates the sequence to iterate through. The in operator appears before the sequence to tell Python to run the loop for every item in the sequence. In this example, the sequence is the list of usernames. The loop header must end with a colon (:). 
+
+The second line of this example for loop is the loop body. The body of the for loop might consist of multiple lines of code. In the body, you indicate what the loop should do with each iteration. In this case, it's to print(i), or in other words, to display the current value of the loop variable during that iteration of the loop. For Python to execute the code properly, the loop body must be indented further than the loop header. 
+
+Note: When used in a for loop, the in operator precedes the sequence that the for loop will iterate through. When used in a conditional statement, the in operator is used to evaluate whether an object is part of a sequence.  The example if "elarson" in ["tshah", "bmoreno", "elarson"] evaluates to True because "elarson" is part of the sequence following in.
+
+Looping through a list
+Using for loops in Python allows you to easily iterate through lists, such as a list of computer assets. In the following for loop, asset is the loop variable and another variable, computer_assets, is the sequence. The computer_assets variable stores a list. This means that on the first iteration the value of asset will be the first element in that list, and on the second iteration, the value of asset will be the second element in that list. You can run the code to observe what it outputs: 
+
+123
+computer_assets = ["laptop1", "desktop20", "smartphone03"]
+for asset in computer_assets:
+    print(asset)
+Reset
+laptop1
+desktop20
+smartphone03
+Note: It is also possible to loop through a string. This will return every character one by one. You can observe this by running the following code block that iterates through the string "security":
+
+123
+string = "security"
+for character in string:
+    print(character)
+Reset
+s
+e
+c
+u
+r
+i
+t
+y
+Using  range()
+Another way to iterate through a for loop is based on a sequence of numbers, and this can be done with range(). The range() function generates a sequence of numbers. It accepts inputs for the start point, stop point, and increment in parentheses. For example, the following code indicates to start the sequence of numbers at 0, stop at 5, and increment each time by 1:
+
+range(0, 5, 1)
+
+Note: The start point is inclusive, meaning that 0 will be included in the sequence of numbers, but the stop point is exclusive, meaning that 5 will be excluded from the sequence. It will conclude one integer before the stopping point.
+
+When you run this code, you can observe how 5 is excluded from the sequence:
+
+12
+for i in range(0, 5, 1):
+    print(i)
+Reset
+0
+1
+2
+3
+4
+You should be aware that it's always necessary to include the stop point, but if the start point is the default value of 0 and the increment is the default value of 1, they don't have to be specified in the code. If you run this code, you will get the same results:
+
+12
+for i in range(5):
+    print(i)
+Reset
+0
+1
+2
+3
+4
+Note: If the start point is anything other than 0 or the increment is anything other than 1, they should be specified.
+
+while loops
+If you want a loop to iterate based on a condition, you should use a while loop. As long as the condition is True, the loop continues, but when it evaluates to False, the while loop exits. The following while loop continues as long as the condition that i < 5 is True:
+
+1234
+i = 1
+while i < 5:
+    print(i)
+    i = i + 1
+Reset
+1
+2
+3
+4
+In this while loop, the loop header is the line while i < 5:. Unlike with for loops, the value of a loop variable used to control the iterations is not assigned within the loop header in a while loop. Instead, it is assigned outside of the loop. In this example, i is assigned a starting value of 1 in a line preceding the loop.
+
+The keyword while signals the beginning of a while loop. After this, the loop header indicates the condition that determines when the loop terminates. This condition uses the same comparison operators as conditional statements. Like in a for loop, the header of a while loop must end with a colon (:).
+
+The body of a while loop indicates the actions to take with each iteration. In this example, it is to display the value of i and to increment the value of i by 1. In order for the value of i to change with each iteration, it's necessary to indicate this in the body of the while loop. In this example, the loop iterates four times until it reaches a value of 5.
+
+Integers in the loop condition
+Often, as just demonstrated, the loop condition is based on integer values. For example, you might want to allow a user to log in as long as they've logged in less than five times. Then, your loop variable, login_attempts, can be initialized to 0, incremented by 1 in the loop, and the loop condition can specify to iterate only when the variable is less than 5. You can run the code below and review the count of each login attempt:
+
+1234
+login_attempts = 0
+while login_attempts < 5:
+    print("Login attempts:", login_attempts)
+    login_attempts = login_attempts + 1
+Reset
+Login attempts: 0
+Login attempts: 1
+Login attempts: 2
+Login attempts: 3
+Login attempts: 4
+The value of login_attempts went from 0 to 4 before the loop condition evaluated to False. Therefore, the values of 0 through 4 print, and the value 5 does not print.
+
+Boolean values in the loop condition
+Conditions in while loops can also depend on other data types, including comparisons of Boolean data. In Boolean data comparisons, your loop condition can check whether a loop variable equals a value like True or False. The loop iterates an indeterminate number of times until the Boolean condition is no longer True. 
+
+In the example below, a Boolean value is used to exit a loop when a user has made five login attempts. A variable called count keeps track of each login attempt and changes the login_status variable to False when the count equals 4. (Incrementing count from 0 to 4 represents five login attempts.) Because the while condition only iterates when login_status is True, it will exit the loop. You can run this to explore this output: 
+
+1234567
+count = 0
+login_status = True
+while login_status == True:
+    print("Try again.")
+    count = count + 1
+    if count == 4:
+        login_status = False
+Reset
+Try again.
+Try again.
+Try again.
+Try again.
+The code prints a message to try again four times, but exits the loop once login_status is set to False.   
+
+Managing loops
+You can use the break and continue keywords to further control your loop iterations. Both are incorporated into a conditional statement within the body of the loop. They can be inserted to execute when the condition in an if statement is True. The break keyword is used to break out of a loop. The continue keyword is used to skip an iteration and continue with the next one. 
+
+break
+When you want to exit a for or while loop based on a particular condition in an if statement being True, you can write a conditional statement in the body of the loop and write the keyword break in the body of the conditional. 
+
+The following example demonstrates this. The conditional statement with break instructs Python to exit the for loop if the value of the loop variable asset is equal to "desktop20". On the second iteration, this condition evaluates to True. You can run this code to observe this in the output: 
+
+12345
+computer_assets = ["laptop1", "desktop20", "smartphone03"]
+for asset in computer_assets:
+    if asset == "desktop20":
+        break
+    print(asset)
+Reset
+laptop1
+As expected, the values of "desktop20" and "smartphone03" don't print because the loop breaks on the second iteration.
+
+continue
+When you want to skip an iteration based on a certain condition in an if statement being True, you can add the keyword continue in the body of a conditional statement within the loop. In this example, continue will execute when the loop variable of asset is equal to "desktop20". You can run this code to observe how this output differs from the previous example with break:
+
+12345
+computer_assets = ["laptop1", "desktop20", "smartphone03"]
+for asset in computer_assets:
+    if asset == "desktop20":
+        continue
+    print(asset)
+Reset
+laptop1
+smartphone03
+The value "desktop20" in the second iteration doesn't print. However, in this case, the loop continues to the next iteration, and "smartphone03" is printed. 
+
+Infinite loops
+If you create a loop that doesn't exit, this is called an infinite loop. In these cases, you should press CTRL-C or CTRL-Z on your keyboard to stop the infinite loop. You might need to do this when running a service that constantly processes data, such as a web server.
+
+
+
+
+
+Terms and definitions from Course 7, Week 1
+Automation: The use of technology to reduce human and manual effort to perform common and repetitive tasks
+
+Boolean data: Data that can only be one of two values: either True or False
+
+Command-line interface: A text-based user interface that uses commands to interact with the computer
+
+Comment: A note programmers make about the intention behind their code
+
+Conditional statement: A statement that evaluates code to determine if it meets a specified set of conditions
+
+Data type: A category for a particular type of data item
+
+Dictionary data: Data that consists of one or more key-value pairs
+
+Float data: Data consisting of a number with a decimal point
+
+Integer data: Data consisting of a number that does not include a decimal point
+
+Integrated development environment (IDE): A software application for writing code that provides editing assistance and error correction tools
+
+Interpreter: A computer program that translates Python code into runnable instructions line by line 
+
+Iterative statement: Code that repeatedly executes a set of instructions
+
+List data: Data structure that consists of a collection of data in sequential form
+
+Loop variable: A variable that is used to control the iterations of a loop
+
+Notebook: An online interface for writing, storing, and running code 
+
+Programming: A process that can be used to create a specific set of instructions for a computer to execute tasks
+
+Set data: Data that consists of an unordered collection of unique values
+
+String data: Data consisting of an ordered sequence of characters
+
+Syntax: The rules that determine what is correctly structured in a computing language
+
+Tuple data: Data structure that consists of a collection of data that cannot be changed 
+
+Type error: An error that results from using the wrong data type
+
+Variable: A container that stores data
+
+
